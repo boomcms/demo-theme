@@ -57,6 +57,34 @@
         }
 }
 
+.hasSidebar(@float: left, @width: 20rem) {
+	.clearAfter;
+
+	.main, .content  {
+		box-sizing: border-box;
+		width: calc(~'100% - 20rem');
+
+			.float(@float) when (@float = left) {
+				float: right;
+			}
+
+			.float(@float) when (@float = right) {
+				float: left;
+			}
+			
+			.float(@float);
+	}
+
+	.sidebar, .rightcol, .leftcol {
+		width: 20rem;
+	}
+
+	.sidebar {
+		float: @float;
+
+	}
+}
+
 .box(@bgColor: transparent, @color: transparent, @size: 0px ) {
     border: @size solid @color;
     background-color: @bgColor;
