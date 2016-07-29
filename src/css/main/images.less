@@ -1,0 +1,22 @@
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;	
+}
+
+.image {	
+	display: block;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50%;
+}
+
+		
+.bgimage {
+	.image;
+	.overlay;
+	background-color: fade(#222, 50%);
+	background-blend-mode: multiply;
+}

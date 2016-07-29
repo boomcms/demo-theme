@@ -1,0 +1,1 @@
+<a href="#" class="bgimage"><?= $placeholder ?></a>

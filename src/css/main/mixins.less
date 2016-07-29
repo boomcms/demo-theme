@@ -1,0 +1,82 @@
+/*---------------------------------------------------
+     LESS mixins
+  ---------------------------------------------------*/
+
+.clearAfter(){
+	&:after  {
+	    content: '';
+	    clear: both;
+	    width: 100%;
+	    display: block;
+	    height: 0;
+	}
+}
+
+.center() {
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+ 
+ }
+
+.scale(@ratio: 1.5) {
+    .transform(scale(@ratio));
+}
+
+ .transitionfix() {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0)
+}
+
+.placeholder(@color: @white) {
+    ::-webkit-input-placeholder {
+        color: @color;
+    }
+    :-moz-placeholder {
+        color: @color;
+        opacity: 1;
+    }
+    ::-moz-placeholder {
+        color: @color;
+        opacity: 1;
+    }
+    :-ms-input-placeholder {
+        color: @color;
+    }
+}
+.negativeMargin(@margin : .5rem) {
+	    margin-left: -@margin;
+        margin-right: -@margin;
+        width: auto;
+
+        > * {
+            padding-left: @margin;
+            padding-right: @margin;
+        }
+}
+
+.box(@bgColor: transparent, @color: transparent, @size: 0px ) {
+    border: @size solid @color;
+    background-color: @bgColor;
+    margin-bottom: 1rem;
+}
+
+.button(@cbgColor: transparent, @textColor: @black) {
+    .box(@cbgColor, @textColor, 0);
+    color: @textColor;
+	padding: .5rem;
+
+    html.js &  {
+        transition:.2s, ease-in;
+    }   
+
+    &:hover {
+
+        color: @white;
+        background-color: @hoverColor;
+        border-color: @hoverColor;
+        cursor: pointer;
+    }
+}
