@@ -1,49 +1,51 @@
 <?= $view('inc.header') ?>
 
 <article id="main" role="main">
-    <?= $view('inc.page-header') ?>
+    <?= $view('inc.slideshow') ?> 
 
     <section id="content" class="container">
+
+        <h1 id="b-page-title"><?= $page->getTitle() ?></h1>
         <?= $chunk('text', 'standfirst') ?>
         <?= $chunk('text', 'bodycopy') ?>
     </section>
     <section id="lists">
-    	<ul class="cols">
-    		<li class="col-2"></li>
-    		<li class="col-2"></li>
-    		<li class="col-2"></li>
-    		<li class="col-2"></li>
+    	<ul class="cols-2"> 
+    		<li></li>
+    		<li></li>
+    		<li></li>
+    		<li></li>
     	</ul>
-    	<div class="col-wrapper">
-	    	<ul class="cols">
-	    		<li class="col-3"></li>
-	    		<li class="col-3"></li>
-	    		<li class="col-3"></li>
-	    		<li class="col-3"></li>
-	    		<li class="col-3"></li>
-	    		<li class="col-3"></li>
+    	<div class="cols-wrapper">
+	    	<ul class="cols-3">
+	    		<li></li>
+	    		<li></li>
+	    		<li></li>
+	    		<li></li>
+	    		<li></li>
+	    		<li></li>
 	    	</ul>
     	</div>
-    	<ul class="cols">
-    		<li class="col-4"></li>
-    		<li class="col-4"></li>
-    		<li class="col-4"></li>
-    		<li class="col-4"></li>
+    	<ul class="cols-4">
+    		<li></li>
+    		<li></li>
+    		<li></li>
+    		<li></li>
     	</ul>
-    	<ul class="cols">
-    		<li class="col-5"></li>
-    		<li class="col-5"></li>
-    		<li class="col-5"></li>
-    		<li class="col-5"></li>
-    		<li class="col-5"></li>
+    	<ul class="cols-5">
+    		<li></li>
+    		<li></li>
+    		<li></li>
+    		<li></li>
+    		<li></li>
     	</ul>
-    	<ul class="cols">
-    		<li class="col-6"></li>
-    		<li class="col-6"></li>
-    		<li class="col-6"></li>
-    		<li class="col-6"></li>
-    		<li class="col-6"></li>
-    		<li class="col-6"></li>
+    	<ul class="cols-6">
+    		<li></li>
+    		<li></li>
+    		<li></li>
+    		<li></li>
+    		<li></li>
+    		<li></li>
     	</ul>
     </section>
 </article>

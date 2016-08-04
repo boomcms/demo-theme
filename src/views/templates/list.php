@@ -7,7 +7,8 @@
         <div class="container">
         <?= $view('inc.features',[
             'title' => 'Lists',
-            'items' => 1
+            'item_template' => '4col',
+            'items' => 4
         ]) ?>
         </div>
     </section>

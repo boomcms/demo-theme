@@ -1,15 +1,32 @@
 /*---------------------------------------------------
      LESS mixins
   ---------------------------------------------------*/
+  @import '../../bower_components/homeless/dist/home.less';
 
-.clearAfter(){
-	&:after  {
-	    content: '';
-	    clear: both;
-	    width: 100%;
-	    display: block;
-	    height: 0;
-	}
+.clear(@position: after ){
+			.if(@position eq both, {
+				.then()  {
+					&:after, &:before  {
+					    content: '';
+					    clear: both;
+					    width: 100%;
+					    display: block;
+					    height: 0;
+					}
+				}
+				.else()  {
+					&:@{position}  {
+					    content: '';
+					    clear: both;
+					    width: 100%;
+					    display: block;
+					    height: 0;
+					}
+				}
+		
+	});
+
+
 }
 
 .center() {
@@ -57,34 +74,91 @@
         }
 }
 
-.hasSidebar(@float: left, @width: 20rem) {
-	.clearAfter;
+.hasSidebar(@float: right, @width: 20rem) {
+	.clear(after);
 
 	.main, .content  {
 		box-sizing: border-box;
-		width: calc(~'100% - 20rem');
+	
+	@media all and (min-width:  (@tablet_width + @scrollBar))  {
+		width: calc(~'100%' - @width);
 
-			.float(@float) when (@float = left) {
-				float: right;
-			}
+			.if(@float eq left, {
 
-			.float(@float) when (@float = right) {
-				float: left;
-			}
-			
-			.float(@float);
+				.then()  {
+					float: right;
+				}
+				.else()  {
+					float: left;
+				}
+		
+	});
+}
+		.sidebar, .rightcol, .leftcol {
+			width: @width;
+		}
+
+		.sidebar {
+			float: @float;
+
+		}
 	}
 
-	.sidebar, .rightcol, .leftcol {
-		width: 20rem;
-	}
+}
+.cols(@number: 4) {
 
-	.sidebar {
-		float: @float;
+	list-style: none;
+    padding: 0;
+    width: 100%;
+    margin:1rem 0;
+    .clear(after);
 
+	> *  {
+	display: inline-block;
+	box-sizing: border-box;
+	float: left; 
+	width: 100%;
+	
+		@media all and (min-width: (@mobile_width + @scrollBar)) {
+			.if(@number gte @show_col_mobile,  {
+				.then(){
+					width: 100% / @show_col_mobile;
+					}
+			});	
+		}
+
+		@media all and (min-width: (@tiny_width + @scrollBar)) {
+			.if(@number gte @show_col_tiny,  {
+				.then(){
+				width: 100% / @show_col_tiny;
+				}
+			});
+		}
+
+		@media all and (min-width: (@tablet_width + @scrollBar)) {
+			.if(@number gte @show_col_tablet,  {
+				.then(){
+				width: 100% / @show_col_tablet;
+				}
+			});
+
+		}
+		@media all and (min-width: (@small_width + @scrollBar)) {
+			.if(@number gte @show_col_small,  {
+				.then(){
+				width: 100% / @show_col_small;
+				}
+			});
+		}	
+		@media all and (min-width: (@medium_width + @scrollBar)) {
+			.if(@number gte @show_col_medium,  {
+				.then(){
+				width: 100% / @number;
+				}
+			});
+		}
 	}
 }
-
 .box(@bgColor: transparent, @color: transparent, @size: 0px ) {
     border: @size solid @color;
     background-color: @bgColor;

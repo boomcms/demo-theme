@@ -7,30 +7,36 @@
         margin: 0 auto;
         padding: 0 15px;
         box-sizing: border-box;
+        .clear(both); 
     }
 
-.cols {
-    list-style: none;
-    padding: 0;
-    width: 100%;
-    .clearAfter;
-    margin:1rem 0;
-    > * {
-        display: inline-block;
-        border: 1px solid @black;
-        box-sizing: border-box;
-        float: left;
-        min-height: 100px;
+/*  creating dynamically .col-1 to .col-5 */  
+.for(1, 6, {.callback(@i) {
+    .cols-@{i} {
+            .cols(@i);
+            > * {
+                border: 1px solid @black;
+                min-height: 100px;
+            }
+        }
+    }});
+
+/* .col-6 > elements */
+.cols-6 {
+    .cols(6);
+            > * {
+                border: 1px solid @black;
+                min-height: 100px;
     }
 }
-
-.col-wrapper {
+.cols-wrapper {
     padding: 0;
     overflow: hidden;
     width: 100%;
     box-sizing: border-box;
 
-   .cols {
+   .cols-3 {
+    /* creates negative margin */
         .negativeMargin(.5rem);
     }
 }
@@ -42,34 +48,26 @@
     display: block;
     background: #fa3443;
 }
-.col-1, .col-2, .col-3, .col-4, .col-5, .col-6 {
-    width: 100%;
-}
 
 
 
-@media all and (min-width: (@mobile_width + 22)) {
+
+@media all and (min-width: (@mobile_width + @scrollBar)) {
     .container {
         background: @colorMobile; /* Orange */
 
     }
-
-    .col-2, .col-3, .col-4, .col-5, .col-6  {
-        width: 50%;
-    }
 }
 
-@media all and (min-width: (@tiny_width + 22)) {
+@media all and (min-width: (@tiny_width + @scrollBar)) {
     .container {
         background: @colorTiny; /* Yellowish */
     }
 
-    .col-3, .col-4, .col-5, .col-6 {
-        width: 100% / 3;
-    }
+
 }
 
-@media all and (min-width: (@tablet_width + 22)) {
+@media all and (min-width: (@tablet_width + @scrollBar)) {
     .container {
         background: @colorTablet; /*Faded Crimsons*/
         width: @tablet_width;
@@ -78,7 +76,7 @@
     }
 }
 
-@media all and (min-width: (@small_width + 22)) {
+@media all and (min-width: (@small_width + @scrollBar)) {
     .container {
         background: @colorSmall; /* Pink? */
         width: @small_width;
@@ -86,31 +84,19 @@
         padding-right: 0;
     }
 
-    .col-4, .col-5, .col-6 {
-        width: 100% / 4;
-    }
+
 }
 
-@media all and (min-width: (@medium_width + 22)) {
+@media all and (min-width: (@medium_width + @scrollBar)) {
     .container {
         background: @colorMedium; /* Blue */
         width: @medium_width;
     }
-
-     .col-5 {
-        width: 100% / 5;
-    }
-
-     .col-6 {
-        width: 100% / 6;
-    }
 }      
 
-@media all and (min-width: (@width + 22)) {
+@media all and (min-width: (@large_width  + @scrollBar)) {
     .container {
         background: @colorBig; /* Greenish */
-        width: @width;
+        width: @large_width ;
     }
-
-
 }

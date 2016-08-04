@@ -1,0 +1,1 @@
+<a href="#" id="slideshow" class="slide-title slide-caption"><?= $placeholder ?></a>
