@@ -28,7 +28,13 @@
 
 
 }
-
+.fullContain() {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;	
+}
 .center() {
     top: 50%;
     left: 50%;
@@ -80,7 +86,7 @@
 	.main, .content  {
 		box-sizing: border-box;
 	
-	@media all and (min-width:  (@tablet_width + @scrollBar))  {
+	@media all and (min-width:  (@tablet_width + @scroll_bar))  {
 		width: calc(~'100%' - @width);
 
 			.if(@float eq left, {
@@ -119,7 +125,7 @@
 	float: left; 
 	width: 100%;
 	
-		@media all and (min-width: (@mobile_width + @scrollBar)) {
+		@media all and (min-width: (@mobile_width + @scroll_bar)) {
 			.if(@number gte @show_col_mobile,  {
 				.then(){
 					width: 100% / @show_col_mobile;
@@ -127,7 +133,7 @@
 			});	
 		}
 
-		@media all and (min-width: (@tiny_width + @scrollBar)) {
+		@media all and (min-width: (@tiny_width + @scroll_bar)) {
 			.if(@number gte @show_col_tiny,  {
 				.then(){
 				width: 100% / @show_col_tiny;
@@ -135,7 +141,7 @@
 			});
 		}
 
-		@media all and (min-width: (@tablet_width + @scrollBar)) {
+		@media all and (min-width: (@tablet_width + @scroll_bar)) {
 			.if(@number gte @show_col_tablet,  {
 				.then(){
 				width: 100% / @show_col_tablet;
@@ -143,14 +149,14 @@
 			});
 
 		}
-		@media all and (min-width: (@small_width + @scrollBar)) {
+		@media all and (min-width: (@small_width + @scroll_bar)) {
 			.if(@number gte @show_col_small,  {
 				.then(){
 				width: 100% / @show_col_small;
 				}
 			});
 		}	
-		@media all and (min-width: (@medium_width + @scrollBar)) {
+		@media all and (min-width: (@medium_width + @scroll_bar)) {
 			.if(@number gte @show_col_medium,  {
 				.then(){
 				width: 100% / @number;
@@ -181,4 +187,35 @@
         border-color: @hoverColor;
         cursor: pointer;
     }
+}
+
+
+
+.highlightBreaks(@element: body) {
+
+	 @{element} {
+		@media all and (min-width: (@mobile_width + @scroll_bar)) {
+		        background: @colorMobile; /* Orange */
+		}
+
+		@media all and (min-width: (@tiny_width + @scroll_bar)) {
+		        background: @colorTiny; /* Yellowish */
+		}
+
+		@media all and (min-width: (@tablet_width + @scroll_bar)) {
+		        background: @colorTablet; /*Faded Crimsons*/
+		}
+
+		@media all and (min-width: (@small_width + @scroll_bar)) {
+		        background: @colorSmall; /* Pink? */
+		}
+
+		@media all and (min-width: (@medium_width + @scroll_bar)) {
+		        background: @colorMedium; /* Blue */
+		}      
+
+		@media all and (min-width: (@large_width  + @scroll_bar)) {
+		        background: @colorBig; /* Greenish */
+		}
+	}
 }

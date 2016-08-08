@@ -5,5 +5,6 @@
             <p><a href="http://www.github.com/boomcms/theme-default">BoomCMS Default Theme</a></p>
 
         </footer>
+        <!-- starter-theme -->
     </body>
 </html>

@@ -11,11 +11,11 @@ module.exports = function(grunt) {
 		concat: {
 			dist: {
 	  			src: [
-					'bower_components/modernizr/modernizr.js',
 					'bower_components/jquery/dist/jquery.js',
+					'bower_components/modernizr/modernizr.js',
 					'bower_components/flexslider/jquery.flexslider.js',
 					'src/js/resizeImages.js',
-					'src/js/slideshow.js',
+					'src/js/slideshow.js', 
 					'src/js/main.js'
 				],
 				dest: 'public/main.js'

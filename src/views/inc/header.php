@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html dir="ltr" lang="en-GB"> 
 	<head>
 		<title><?= $page->getTitle() ?> | <?= Settings::get('site.name') ?></title>
 		

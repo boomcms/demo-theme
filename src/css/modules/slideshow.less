@@ -2,10 +2,18 @@
 	height: 50rem;
 	padding: 0;
 
-	
+	a#slideshow {
+		display: block;
+		line-height: 30rem;
+		font-size: 3rem;
+
+	}
+
 	#slideshow  {
 		width: 100%;
 		height: 100%;
+		overflow: hidden;
+
 		.bgimage {
 			background-position: 50% 50%;
 			background-size: cover;
@@ -26,8 +34,10 @@
 					width: 100%;
 					height: auto;
 					text-align: left;
+					z-index: 3;
+					
 					.container {
-						padding: 1rem 0;
+						padding: 1rem;
 					}
 
 					h3, p {
@@ -39,6 +49,7 @@
 
 		.flex-navigation .container {
 			position: relative;
+
 		}
 
 		.flex-control-paging {
@@ -70,10 +81,14 @@
 }
 
 
-@media all and (min-width: (@tablet_width + @scrollBar)) {
-#banner #slideshow .flex-control-paging li a {
-	width: 1.5rem;
-	height: 1.5rem;
-}
-
+@media all and (min-width: (@tablet_width + @scroll_bar)) {
+	#banner #slideshow .flex-control-paging li a {
+		width: 1.5rem;
+		height: 1.5rem;
 	}
+}
+@media all and (min-width: (@large_width + @scroll_bar)) {
+	#banner {
+		height: @slideshow_height+10rem;
+	}
+}

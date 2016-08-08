@@ -15,8 +15,6 @@
     .cols-@{i} {
             .cols(@i);
             > * {
-                border: 1px solid @black;
-                min-height: 100px;
             }
         }
     }});
@@ -25,8 +23,6 @@
 .cols-6 {
     .cols(6);
             > * {
-                border: 1px solid @black;
-                min-height: 100px;
     }
 }
 .cols-wrapper {
@@ -48,37 +44,25 @@
     display: block;
     background: #fa3443;
 }
+/* Add colors for visual reference on developing breakpoints */
+.highlightBreaks;
 
-
-
-
-@media all and (min-width: (@mobile_width + @scrollBar)) {
-    .container {
-        background: @colorMobile; /* Orange */
-
-    }
+@media all and (min-width: (@mobile_width + @scroll_bar)) {
 }
 
-@media all and (min-width: (@tiny_width + @scrollBar)) {
-    .container {
-        background: @colorTiny; /* Yellowish */
-    }
-
-
+@media all and (min-width: (@tiny_width + @scroll_bar)) {
 }
 
-@media all and (min-width: (@tablet_width + @scrollBar)) {
+@media all and (min-width: (@tablet_width + @scroll_bar)) {
     .container {
-        background: @colorTablet; /*Faded Crimsons*/
         width: @tablet_width;
         padding-left: 0;
         padding-right: 0;
     }
 }
 
-@media all and (min-width: (@small_width + @scrollBar)) {
+@media all and (min-width: (@small_width + @scroll_bar)) {
     .container {
-        background: @colorSmall; /* Pink? */
         width: @small_width;
         padding-left: 0;
         padding-right: 0;
@@ -87,16 +71,14 @@
 
 }
 
-@media all and (min-width: (@medium_width + @scrollBar)) {
+@media all and (min-width: (@medium_width + @scroll_bar)) {
     .container {
-        background: @colorMedium; /* Blue */
         width: @medium_width;
     }
 }      
 
-@media all and (min-width: (@large_width  + @scrollBar)) {
+@media all and (min-width: (@large_width  + @scroll_bar)) {
     .container {
-        background: @colorBig; /* Greenish */
         width: @large_width ;
     }
 }

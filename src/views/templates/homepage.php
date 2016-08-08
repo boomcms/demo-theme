@@ -1,13 +1,22 @@
 <?= $view('inc.header') ?>
 
 <article id="main" role="main">
-      <?= $view('inc.page-header') ?>
+    <?= $view('inc.slideshow') ?> 
 
     <section id="content" class="container">
 
         <h1 id="b-page-title"><?= $page->getTitle() ?></h1>
         <?= $chunk('text', 'standfirst') ?>
         <?= $chunk('text', 'bodycopy') ?>
+    </section>
+    <section id="featured">
+        <?= $view('inc.featured',[
+            'show_title' => false,
+            'items' => 6,
+            'item_template' => 'with-image',
+            'class' => 'homepage-featured',
+            'cols'  => 3
+        ]) ?>
     </section>
     <section id="lists">
     <h2>Remove Me</h2>
