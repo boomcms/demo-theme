@@ -5,9 +5,11 @@
 
     <section class="page-list">
         <div class="container">
-        <?= $view('inc.features',[
-            'title' => 'Lists',
-            'item_template' => '4col',
+        <?= $view('inc.featured',[
+            'show_title' => false,
+            'item_template' => 'with-image',
+            'cols' => 3,
+            'class' => 'blog-featured',
             'items' => 4
         ]) ?>
         </div>

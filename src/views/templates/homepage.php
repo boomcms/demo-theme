@@ -60,4 +60,4 @@
     </section>
 </article>
 
-<?= $view('inc.footer') ?>
+<?= $view('inc.footer-homepage') ?>
