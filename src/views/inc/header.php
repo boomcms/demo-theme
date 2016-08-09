@@ -24,7 +24,7 @@
         <?php else: ?>
             <meta name='robots' content='noindex, nofollow' />
         <?php endif ?>
-        <script type="text/javascript" async src="<?= $pub('main.js') ?>"></script>
+        
     </head>
 
     <body>

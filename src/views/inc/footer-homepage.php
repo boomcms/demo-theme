@@ -8,6 +8,7 @@
             </div>
 
         </footer>
+         <?= $view('inc.footer-scripts') ?>
         <!-- starter-theme -->
     </body>
 </html>

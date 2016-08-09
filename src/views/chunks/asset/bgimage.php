@@ -1,1 +1,0 @@
-<div class="bgimage" style="background-image: url(<?= $assetURL(['asset' => $asset, 'width' => 2000]) ?>"></div>

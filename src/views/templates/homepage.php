@@ -18,6 +18,24 @@
             'cols'  => 3
         ]) ?>
     </section>
+    <section class="featured-collection container">
+        
+        <?= $view('inc.asset-collection',[
+             'items' => 2,
+             'cols' => 1,
+             'class' => 'showcase-collection',
+             'chunk_name' => 'collection',
+             'item_template' => '',
+             'placeholder_text' => 'Insert a Collection'
+        ]) ?>
+
+    </section>
+    <section class="collection-list container">
+        <?= $view('inc.slideshow-list', [
+            'class' => 'child-cols-3',
+            'show_title' => true
+        ]) ?>
+    </section>
     <section id="lists">
     <h2>Remove Me</h2>
     	<ul class="cols-2"> 

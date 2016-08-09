@@ -1,0 +1,32 @@
+.slideshow-list {
+	ul {
+		li {
+			padding-bottom: 1rem;
+			
+			a {
+				position: relative;
+				height: 30rem;
+				width: 100%;
+				display: block;
+
+				.description {
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 100%;
+					padding: 0.5rem 1rem;
+					box-sizing: border-box;
+					.gradient(bottom, to top, rgba(0,0,0,0.4), 0);
+
+					.slide-title {
+						margin: 0;
+					}
+
+					.slide-caption {
+						margin: 1rem 0;
+					}
+				}
+			}
+		}
+	}
+}

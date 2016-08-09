@@ -20,11 +20,14 @@
     }});
 
 /* .col-6 > elements */
-.cols-6 {
+.cols-6{
     .cols(6);
-            > * {
-    }
+
 }
+.child-cols-3 > ul  {
+    .cols(3);
+    .negativeMargin(.5rem);
+} 
 .cols-wrapper {
     padding: 0;
     overflow: hidden;
