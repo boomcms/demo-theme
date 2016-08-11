@@ -1,13 +1,20 @@
 <?= $view('inc.header') ?>
 
 <article id="main" role="main">
-      <?= $view('inc.page-header') ?>
+     
+    <section class="collection-list">
+        <?= $view('inc.slideshow-list', [
+            'class' => 'page-collection-list',
+            'show_title' => false,
+            'cols' => 3
+        ]) ?>
+    </section>
 
     <section id="content" class="container">
 
         <h1 id="b-page-title"><?= $page->getTitle() ?></h1>
-        <?= $chunk('text', 'standfirst') ?>
-        <?= $chunk('text', 'bodycopy') ?>
+        <?= $chunk('text', 'standfirst')->setHtml('<h2>{text}</h2>') ?>
+        <?= $chunk('text', 'bodycopy')->setHtml('<main>{text}</main>') ?>
     </section>
     <section id="lists">
     <h2>Remove Me</h2>

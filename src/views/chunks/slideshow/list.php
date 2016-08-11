@@ -1,14 +1,13 @@
   <?php if (count($slides)) : ?>
-
     <ul>
              <?php foreach ($slides as $slide): ?>
-			<?php if ($slide->getAssetId()) : ?>
-                <?php 
+			<?php if ($slide->getAssetId()) : 
+            
                     $title = $slide->getTitle();
                     $caption = $slide->getCaption();
                     $link = $slide->getLink();
-
                 ?>
+
                 <li>
                     <a href="<?php if($link) :?><?= $link ?><?php else : ?>javascript:void()<?php endif ?>" class="slide-link">
                     <span class="bgimage" data-asset="<?= $slide->getAssetId() ?>" data-width="400" data-height="300">
@@ -26,9 +25,7 @@
             <?php endif ?>
                         </a>
                     </li>
-                    <?php endif ?>
-
-    
+                    <?php endif ?>    
             <?php endforeach ?>
             </ul>
 <?php endif ?>

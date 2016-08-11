@@ -2,8 +2,8 @@
   $menu = [
   /* 'menu-item-page-url' => [desired child pages (false -> if none)] */
         '/'  => false,
-        'list-template-page'  => ['parent' => Page::findByPrimaryUri('list-template-page'), 'visibileInNavigation'],
-        'standard-page'  => ['parent' => Page::findByPrimaryUri('standard-page'), 'visibileInNavigation'],
+        'blog'  => ['parent' => Page::findByPrimaryUri('blog'), 'visibileInNavigation'],
+        'about'  => ['parent' => Page::findByPrimaryUri('about'), 'visibileInNavigation'],
     ];
     ?>
 

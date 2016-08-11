@@ -14,20 +14,57 @@ body {
 
 	 h1 {
 		font-weight: bold;
-        font-size: 3.2rem;
+        font-size: 3rem;
         line-height: 1.4em;
-		margin-bottom: 1em;
+        margin-top: 0;
+		margin-bottom: 2rem;
 	}
 
 	h2 {
 		text-align: left;
+        margin-top: 0;
+        margin-bottom: 1rem;
 	}
+
+    img  {
+        max-width: 100%;
+        width: auto;
+        height: auto;
+    }
 
     .standfirst {
         font-size: 1.8rem;
     }
+
+    main {
+        h2 {
+            color: @blue;
+            margin-top: 2rem;
+        }
+        h3 {
+            color: fade(@black, 70%);
+        }
+    }
 }
 
-#featured, #content, #footer, .asset-collection, .slideshow-list {
+blockquote {
+    color: @blue;
+    font-style: italic;
+    font-weight: bold;
+    position: relative;
+    padding-left: 2rem;
+    margin: 4rem 2rem;
+
+    &:after {
+        display: block;
+        content: '"';
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 3rem;
+    }
+}
+
+#featured, #content, #footer, .asset-collection, .slideshow-list, #bodytext {
     .fixEditable;
 }

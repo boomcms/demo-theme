@@ -6,8 +6,8 @@
     <section id="content" class="container">
 
         <h1 id="b-page-title"><?= $page->getTitle() ?></h1>
-        <?= $chunk('text', 'standfirst') ?>
-        <?= $chunk('text', 'bodycopy') ?>
+        <?= $chunk('text', 'standfirst')->setHtml('<h2>{text}</h2>') ?>
+        <?= $chunk('text', 'bodycopy')->setHtml('<main>{text}</main>') ?>
     </section>
     <section id="featured">
         <?= $view('inc.featured',[
@@ -21,7 +21,7 @@
     <section class="featured-collection container">
         
         <?= $view('inc.asset-collection',[
-             'items' => 2,
+             'items' => 1,
              'cols' => 1,
              'class' => 'showcase-collection',
              'chunk_name' => 'collection',
@@ -32,10 +32,29 @@
     </section>
     <section class="collection-list container">
         <?= $view('inc.slideshow-list', [
-            'class' => 'child-cols-3',
-            'show_title' => true
+            'class' => 'home-collection-list',
+            'show_title' => true,
+            'cols' => 3
         ]) ?>
     </section>
+
+    <section class="featured-collection container">
+        
+        <?= $view('inc.asset-collection',[
+             'items' => 1,
+             'cols' => 1,
+             'class' => 'showcase-collection2',
+             'chunk_name' => 'collection2', //must not colide with other instances
+             'item_template' => '',
+             'placeholder_text' => 'Insert a Collection'
+        ]) ?>
+
+    </section>
+    <section id="bodytext" class="container">
+        <?= $chunk('text', 'standfirst2')->setPlaceholderText('Insert title')->setHtml('<h3>{text}</h3>') ?>
+        <?= $chunk('text', 'bodycopy2') ?>
+    </section>
+    
     <section id="lists">
     <h2>Remove Me</h2>
     	<ul class="cols-2"> 

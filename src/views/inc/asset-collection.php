@@ -20,15 +20,19 @@ if(isset($cols)) {
 	 	$cols = 'cols-1';
 	 }
 ?>
-
+<?php if(isset($show_title) && $show_title === true) :?>
+    <?= $chunk('text', $namespace.'title')->setHtml('<h2>{text}</h2>') ?>
+<?php endif ?>
 <?php if(isset($items) && ($items>1)) : ?>
 	<div class="asset-collection <?php if(isset($class)) : ?><?= $class ?><?php endif ?> <?= $cols ?>">
-	<?php for($i=0;$i<$items;$i++) : ?>
+	<?php for($i=1;$i<=$items;$i++) : ?>
     <?= $chunk('asset', $namespace.$i)->template($template)->setFilterByType('image')->setPlaceHolderText($placeholder_text) ?>
 	<?php endfor ?>
 	</div>
 <?php else : ?>
+	<div class="asset-collection cols-1">
   	  <?= $chunk('asset', $namespace)->template($template)->setFilterByType('image')->setPlaceHolderText($placeholder_text) ?>
+  	  </div>
   <?php endif ?>
   
 
