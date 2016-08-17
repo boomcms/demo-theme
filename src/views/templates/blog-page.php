@@ -1,22 +1,28 @@
 <?= $view('inc.header') ?>
 
-<article role="main">
-    <?= $view('inc.page-header') ?>
-
-    <section class="features container">
-        <section id="content" class=" main">
-        <?= $chunk('text', 'standfirst') ?>
-        <?= $chunk('text', 'bodycopy') ?>
-        </section>
-          
-          <aside class="sidebar features">
-            <?= $view('inc.features',[
-                'title' => 'Features',
-                'items' => 6,
-                'class' => 'landing-featured'
-            ]) ?>
-        </aside>
+<article id="main" role="main">
+     
+    <section class="collection-list">
+        <?= $view('inc.slideshow-list', [
+            'class' => 'page-collection-list',
+            'show_title' => false,
+            'cols' => 3,
+            'placeholder_text' => 'Insert blog post assets'
+        ]) ?>
     </section>
+
+    <section id="content" class="container">
+
+        <h1 id="b-page-title"><?= $page->getTitle() ?></h1>
+        <?= $chunk('text', 'standfirst')->setHtml('<h2>{text}</h2>') ?>
+        <?= $chunk('text', 'bodycopy')->setHtml('<div class="text">{text}</div>') ?>
+        <?= $chunk('asset', 'cta')->template('cta')->setPlaceHolderText('Insert Call to Action') ?>
+    </section>
+  
+    <?= $view('inc.related-pages',[
+    'limit' => 3
+    ]) ?>
+
 </article>
 
 <?= $view('inc.footer') ?>

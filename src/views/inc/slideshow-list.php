@@ -14,11 +14,20 @@ if(isset($cols)) {
         $cols = 'child-cols-1';
      }
 
+if(isset($placeholder_text)) {
+    if (!is_string($placeholder_text)) {
+            $placeholder_text = 'Insert collections list';
+     }
+}
+else {
+    $placeholder_text = 'Insert collections list';
+}
+
 ?>
 <div class="slideshow-list <?php if(isset($class)) : ?><?= $class ?><?php endif ?> <?= $cols ?>">
 <?php if(isset($show_title) && $show_title === true) :?>
     <?= $chunk('text', $namespace.'title')->setHtml('<h2>{text}</h2>') ?>
 <?php endif ?>
 
-<?= $chunk('slideshow', $namespace)->template($template)->setPlaceHolderText('Insert collections list') ?>
+<?= $chunk('slideshow', $namespace)->template($template)->setPlaceHolderText($placeholder_text) ?>
 </div>

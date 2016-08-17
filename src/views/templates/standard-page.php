@@ -6,7 +6,8 @@
         <?= $view('inc.slideshow-list', [
             'class' => 'page-collection-list',
             'show_title' => false,
-            'cols' => 3
+            'cols' => 3,
+            'placeholder_text' => 'Insert standard page assets'
         ]) ?>
     </section>
 
