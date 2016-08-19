@@ -1,24 +1,25 @@
 
 <?php 
 
-$template = 'standard';
-if(isset($item_template) && ($item_template !== '')) {
-	$template = $item_template;
-} 
+	$template = 'standard';
+	if(isset($item_template) && ($item_template !== '')) :
+		$template = $item_template;
+	endif;
 
-$namespace = 'assetchunk';
-if(isset($chunk_name) && ($chunk_name !== '')) {
-	$namespace = $chunk_name;
-}
-if(!isset($placeholder_text) || ($placeholder_text == '')) {
-$placeholder_text = 'Insert an asset';
-}
-if(isset($cols)) {
-	$cols = 'cols-'.$cols;
-	 }
-	 else {
+	$namespace = 'assetchunk';
+	if(isset($chunk_name) && ($chunk_name !== '')) :
+		$namespace = $chunk_name;
+	endif;
+
+	if(!isset($placeholder_text) || ($placeholder_text == '')) :
+	$placeholder_text = 'Insert an asset';
+	endif;
+
+	if(isset($cols)) :
+		$cols = 'cols-'.$cols;
+	else :
 	 	$cols = 'cols-1';
-	 }
+	endif;
 ?>
 <?php if(isset($show_title) && $show_title === true) :?>
     <?= $chunk('text', $namespace.'title')->setHtml('<h2>{text}</h2>') ?>

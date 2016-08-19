@@ -1,23 +1,23 @@
  <?php      
- 		$related = $getPages([
-            'parent' => $page->getParent(),
-            'visibleinnavigation' => true,
-        ]);  
+        $related = $pages;
         $related = $related->forget($page->id);
         $page_id = $page->id;
-        if ($related->contains($page)) {
+    if ($related->contains($page)) :
        $related = $related->keyBy('id');
        $related->forget($page_id);
-    }
-    if(!isset($limit)) {
+    endif;
+
+    if(!isset($limit)) :
     	$limit = 3;
-    }    
-    if(!isset($cols)) {
+    endif;    
+
+    if(!isset($cols)) :
     	$cols = 3;
-    }
-    if(!isset($id))  {
+    endif;
+
+    if(!isset($id))  :
     $id='pages-related';
-	}
+	endif;
 
 			?>
 	<?php   if (count($related)>0) : ?>

@@ -1,5 +1,6 @@
 (function($) {
  	var $bannerSlideshow = $('#slideshow');
+ 	var $carousels = $('.slides').parent();
 
 	function bannerSlideshow() {
 		$bannerSlideshow.flexslider({
@@ -10,7 +11,26 @@
 		});
 	};
 
+	function makeCarousels() {
+		if($carousels.length>0)  {
+			$carousels.each(function(key, val) {
+				console.log('init carousel ' + key);
+				$(val).flexslider({
+			      animation: "slide",
+			      animationLoop: false,
+			      itemWidth: 300,
+			      itemMargin: 5,
+			      minItems: 1,
+			      directionNav: false,
+			      maxItems: 3
+			  });
+			});
+		}
+	};
+
+	makeCarousels();
 	bannerSlideshow();
+
 
 	$(document).on('boomcms:chunkload', function(e) {
 		if (e.chunk.type === 'slideshow') {
@@ -31,4 +51,6 @@
 
 		$bannerSlideshow.flexslider('next');
 	});
+
+
 }(jQuery));
