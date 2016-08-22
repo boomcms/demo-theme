@@ -24,6 +24,11 @@
         <?php else: ?>
             <meta name='robots' content='noindex, nofollow' />
         <?php endif ?>
+        <?php if (isset($album)): ?>
+        <link href="/vendor/boomcms/themes/theme-default/album.css" rel='stylesheet' type='text/css' />
+        <?php endif ?>
+
+
         
     </head>
 

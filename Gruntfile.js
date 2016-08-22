@@ -19,6 +19,13 @@ module.exports = function(grunt) {
 					'src/js/main.js'
 				],
 				dest: 'public/main.js'
+			},			
+			dist_album: {
+	  			src: [
+					'bower_components/lightgallery/dist/js/lightgallery.min.js',
+					'src/js/album-scripts.js'
+				],
+				dest: 'public/album.js'
 			}
 		},
 		uglify: {
@@ -50,6 +57,9 @@ module.exports = function(grunt) {
 				files: {
 					 'public/main.css': [
 						'public/main.css'
+					 ],
+					 'public/album.css': [
+					 'bower_components/lightgallery/dist/css/lightgallery.css'
 					 ]
 				}
 			}
@@ -95,7 +105,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-browser-sync');
 
 	grunt.registerTask('build-css', ['less', 'autoprefixer:no_dest', 'cssmin']);
-	grunt.registerTask('build-js', ['concat:dist', 'uglify']);
+	grunt.registerTask('build-js', ['concat:dist', 'concat:dist_album', 'uglify']);
 	grunt.registerTask('build', ['build-css', 'build-js']);
 	grunt.registerTask('sync', ['browserSync', 'watch']);
 	grunt.registerTask('default',['watch']);

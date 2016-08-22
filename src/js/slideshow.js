@@ -1,6 +1,6 @@
 (function($) {
  	var $bannerSlideshow = $('#slideshow');
- 	var $carousels = $('.slides').parent();
+ 	var $carousels = $('.carousel-list');
 
 	function bannerSlideshow() {
 		$bannerSlideshow.flexslider({

@@ -10,7 +10,12 @@
             <p><a href="http://www.github.com/boomcms/theme-default">BoomCMS Default Theme</a></p>
 						 <?= $chunk('text', 'footer', $home->first())->text() ?>
         </footer>
-        <?= $view('inc.footer-scripts') ?>
+        <?php if (!isset($album)): ?>
+        <?= $view('inc.main-scripts') ?>
+        <?php else : ?>
+        <?= $view('inc.album-scripts') ?>
+    <?php endif ?>
+        
         <!-- starter-theme -->
     </body>
 </html>   

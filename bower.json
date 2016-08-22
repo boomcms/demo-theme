@@ -22,10 +22,12 @@
     "tests"
   ],
   "dependencies": {
-    "homeless": "^1.4.1"
+    "homeless": "^1.4.1",
+    "lightgallery": "^1.2.21"
   },
   "devDependencies": {
     "flexslider": "^2.6.1",
-    "modernizr": "^3.3.1"
+    "modernizr": "^3.3.1",
+    "swipebox": "^1.4.4"
   }
 }

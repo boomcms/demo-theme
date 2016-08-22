@@ -28,7 +28,7 @@
     endif;
 
     $layout = 'slideshow';
-    if(isset($carousel)) :
+    if($carousel) :
         $template = 'carousel-list';
         $layout = 'carousel';
 
@@ -38,7 +38,6 @@
 <?php if(isset($show_title) && $show_title === true) :?>
     <?= $chunk('text', $namespace.'title')->setHtml('<h2>{text}</h2>') ?>
 <?php endif ?>
-
 <?= $chunk('slideshow', $namespace)->template($template)->setPlaceHolderText($placeholder_text) ?>
 
 </div>
