@@ -11,10 +11,11 @@
 		});
 	};
 
+
 	function makeCarousels() {
 		if($carousels.length>0)  {
 			$carousels.each(function(key, val) {
-				console.log('init carousel ' + key);
+				// console.log('init carousel ' + key);
 				$(val).flexslider({
 			      animation: "slide",
 			      animationLoop: false,

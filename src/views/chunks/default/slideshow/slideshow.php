@@ -1,1 +1,1 @@
-<a href="#" id="slideshow" class="slide-title slide-caption"><?= $placeholder ?></a>
+<a href="#" class="slide-title slide-caption slide-link default"><?= $placeholder ?></a>

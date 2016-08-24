@@ -1,3 +1,4 @@
+<header id="banner" class="page-header">
 <div id="slideshow" class="flexslider <?php if(count($slides) == 1) : ?>single-slide<?php endif ?>">
     <ul class="slides">
         <?php foreach ($slides as $slide): ?>
@@ -6,7 +7,7 @@
                 <span class="overlay"></span>
                 <div class="flex-caption">
                     <div class="container">
-                         <h3 class="slide-title"><?= $slide->getTitle() ?></h3>
+                         <h3 class="slide-title slide-link"><?php if($slide->getLink() != '') :?><a href="<?= $slide->getLink() ?><?= $slide->getTitle() ?>"></a><?php else : ?><?= $slide->getTitle() ?><?php endif ?></h3>
                          <p class="slide-caption"><?= $slide->getCaption() ?></p>
                     </div>
                 </div>
@@ -23,4 +24,5 @@
             </ol>
         </div>
     </div>
+</div>
 </div>

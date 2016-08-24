@@ -12,7 +12,7 @@
 
        <?php 
        /** 
-       *    Use dfferent views if different structure. Only limit, cols and show_title should be used
+       *    Use dfferent views if different structure. Only layout features variables should be used like 'show_title', 'cols', etc
        */ 
       ?>
 

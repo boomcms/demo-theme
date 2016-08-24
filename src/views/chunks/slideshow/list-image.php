@@ -7,11 +7,9 @@ $title = $slide->getTitle();
 $caption = $slide->getCaption();
 ?>
 <li class="slide-title slide-caption" >
-    <a href="<?= $assetURL(['asset' => $slide->getAssetId(), 'width' => 1600]) ?>" class="album-item" >
-        <img src="<?= $assetURL(['asset' => $slide->getAssetId(), 'width' => 600]) ?>" alt="<?= $title ?>" />
-        <span class="overlay"></span>
-    <?php if($title || $caption) : ?> 
-    <div class="description">
+    <a href="<?= $assetURL(['asset' => $slide->getAssetId(), 'width' => 1600]) ?>" class="album-item" ><img src="<?= $assetURL(['asset' => $slide->getAssetId(), 'width' => 600]) ?>" alt="<?= $title ?>" />
+    <span class="overlay"></span>
+    <?php if($title || $caption) : ?><div class="description">
     <?php if($title) : ?>
          <h3 class="slide-title"><?= $title ?></h3>
     <?php endif ?>

@@ -36,10 +36,16 @@
         <header>
             <nav id="navbar" class="container">
                     <div class="navbar-header">
+                  
                         <a id="logo" href="/"><img src="/vendor/boomcms/themes/theme-default/img/logo.png" alt="BoomCMS logo" /></a>
+                   
                     </div>
-
+                        
                     <div class="nav-container">
+                     <input id="main-menu-state" type="checkbox" />
+                    <label class="main-menu-btn" for="main-menu-state">
+                    <span class="main-menu-btn-icon"></span> <span class="main-menu-btn-text">Toggle main menu visibility</span> <span class="main-menu-btn-title" aria-hidden="true"><span aria-hidden="true" data-icon="h"></span></span>
+                   </label>
                         <?= $view('inc.menu', [
                             'child_items' => true
                         ]) ?>

@@ -6,6 +6,6 @@ endif;
 if($parent) :
 ?>
 <nav id="back-to-parent">
-<a href="<?= $parent->url()?>"><?= $back_text.' <span>'.$parent->getTitle().'</span>' ?></a>
+<a href="<?= $parent->url()?>"><span>&larr;</span> <?= $back_text.' <span>'.$parent->getTitle().'</span>' ?></a>
 </nav>
 <?php endif ?>

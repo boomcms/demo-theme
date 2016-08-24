@@ -1,1 +1,1 @@
-<script type="text/javascript" src="<?= $pub('main.js') ?>"></script>
+<script type="text/javascript" async src="<?= $pub('main.js') ?>"></script>

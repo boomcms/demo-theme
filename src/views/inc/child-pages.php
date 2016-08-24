@@ -15,6 +15,7 @@
 	if(!isset($class))  :
     $class='';
 	endif;
+
 ?>
 <?php if(count($pages)) : ?>
 	<section id="<?= $id ?>" class="child-pages-wrapper <?= $class ?>">
@@ -24,13 +25,17 @@
 		    <?= $chunk('text', $namespace.'title')->setHtml('<h2>{text}</h2>') ?>
 		<?php endif ?>
 		<ul class="cols-<?= $cols ?>">
-		<?php foreach($pages as $target) : ?>
-		<li><a href="<? $target->url() ?>"> 
-		    <span class="bgimage" data-asset="<?= $target->getFeatureImageId() ?>"></span>
+		<?php foreach($pages as $p) : ?>
+		<?php $published_date = $p->getLastPublishedTime(); ?>
+		<li><a href="<?= $p->url() ?>"> 
+		    <span class="bgimage" data-asset="<?= $p->getFeatureImageId() ?>"></span>
 		    <span class="overlay"></span>
 		    <div class="description">
-		    <h3 ><?= $target->getTitle() ?></h3>
-		    <p><?= $chunk('text', 'standfirst', $target)->text() ?></p>
+		    <h3 ><?= $p->getTitle() ?></h3>
+		    <p><?= $chunk('text', 'standfirst', $p)->text() ?></p>
+		    <?php if ($published_date) : ?>
+		    	<span class="date"><time datetime="<?= $published_date->format('Y-m-d H:i:s') ?>" pubdate><?= $published_date->format('d M Y') ?></time></span>
+			<?php endif ?>
 		    </div>
 		</a>
 		</li>

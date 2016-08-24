@@ -1,3 +1,3 @@
-<header id="banner" class="page-header">
+<header id="banner_container">
     <?= $chunk('slideshow', 'slideshow')->template('slideshow') ?>
 </header>

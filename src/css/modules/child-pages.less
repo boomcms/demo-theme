@@ -12,36 +12,21 @@
 				height: 30rem;
 				width: 100%;
 				display: block;
+				text-shadow: 0 1px 1px darken(@blue, 50%);
 
-				.description {
-					position: absolute;
-					bottom: 0;
-					left: 0;
-					width: 100%;
-					padding: 1rem;
-					overflow: hidden;
-					box-sizing: border-box;
-					transition: padding .3s;
-					.gradient(bottom, to top, rgba(0,0,0,0.4), 0);
+				.listItemAnchor;
 
-					h3 {
-						margin: 0;
-						color: @white;
-					}
+				.date {
+					color: lighten(@blue, 30%);
 
-					p {
-						margin: 0;
-						transition: margin .2s;
-						color: @white;
-					}
-				}
-
-				&:hover .description {
-					p  {
-					margin: 1rem 0;
-					}
 				}
 			}
 		}
+	}
+}
+
+@media all and (min-width: (@large_width  + @scroll_bar)) {
+	.child-pages ul li a {
+		height: 40rem;
 	}
 }

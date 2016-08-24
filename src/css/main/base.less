@@ -9,7 +9,7 @@ body {
     margin: 0;
 }
 
-#content {
+#content, #bodytext {
 	padding: 2rem 1rem;
 
 	 h1 {
@@ -49,6 +49,7 @@ body {
             color: @blue;
             margin-top: 2rem;
         }
+
         h3 {
             color: fade(@black, 70%);
         }
@@ -69,6 +70,11 @@ body {
     }
 }
 
+section {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
 blockquote {
     color: @blue;
     font-style: italic;
@@ -87,6 +93,6 @@ blockquote {
     }
 }
 
-#featured, #content, #footer, .asset-collection, .slideshow-list, #bodytext {
+#featured, #content, #footer, .asset-collection, .slideshow-list, #bodytext, #banner_container {
     .fixEditable;
 }

@@ -3,18 +3,19 @@
   /* 'menu-item-page-url' => [desired child pages (false -> if none)] */
         '/'  => false,
         'blog'  => ['parent' => Page::findByPrimaryUri('blog'), 'visibileInNavigation'],
+        'portfolio'  => ['parent' => Page::findByPrimaryUri('portfolio'), 'visibileInNavigation'],
         'about'  => ['parent' => Page::findByPrimaryUri('about'), 'visibileInNavigation'],
     ];
     ?>
 
 <?php if (isset($child_items) && ($child_items)) :?>
-	<ul id="topnav" class="main-menu">
+	<ul id="topnav" class="main-menu sm sm-simple">
 	  <?php foreach ($menu as $section => $criteria) : ?>
 
 	  	<?php   $menu_item = Page::findByUri($section); ?>
 	  			
 	  	<?php	if($criteria) :?>
-	  	<?php 		$menu_sub_items = empty($criteria) ? $getPages(['parent' => $menu_item]) : $getPages($criteria);
+	  	<?php 		$menu_sub_items = empty($criteria) ? $getPages(['parent' => $menu_item, 'visibileInNavigation']) : $getPages($criteria);
                 	
                 else: ?>
                 <?php 
@@ -24,10 +25,7 @@
                 <?php $has_children = count($menu_sub_items); ?>
 		
             <li <?php if ($menu_item->is($page)): ?> class="active"<?php endif ?>>
-            <a href="<?= $menu_item->url() ?>"> <?= $menu_item->getTitle() ?>
-           <?php if ($has_children): ?>
-                        <i class="fa fa-angle-down"></i>
-			<?php endif ?>
+            <a href="<?= $menu_item->url() ?>"><?= $menu_item->getTitle() ?><?php if ($has_children): ?><?php /* Add any toggler needed */ ?><?php endif ?>
             </a>
             	<?php if($has_children) : ?>
 					<ul class="sub-menu">

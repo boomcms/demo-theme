@@ -14,6 +14,7 @@ module.exports = function(grunt) {
 					'bower_components/jquery/dist/jquery.js',
 					'bower_components/modernizr/modernizr.js',
 					'bower_components/flexslider/jquery.flexslider.js',
+					'bower_components/smartmenus/dist/jquery.smartmenus.js',
 					'src/js/resizeImages.js',
 					'src/js/slideshow.js', 
 					'src/js/main.js'
@@ -22,8 +23,11 @@ module.exports = function(grunt) {
 			},			
 			dist_album: {
 	  			src: [
+	  				'bower_components/jquery/dist/jquery.js',
 					'bower_components/lightgallery/dist/js/lightgallery.min.js',
-					'src/js/album-scripts.js'
+					'src/js/resizeImages.js',
+					'src/js/album-scripts.js',
+					'src/js/main.js'
 				],
 				dest: 'public/album.js'
 			}
@@ -56,6 +60,8 @@ module.exports = function(grunt) {
 			target: {
 				files: {
 					 'public/main.css': [
+					 	'bower_components/smartmenus/dist/css/sm-core-css.css',
+					 	'bower_components/smartmenus/dist/css/sm-simple/sm-simple.css',
 						'public/main.css'
 					 ],
 					 'public/album.css': [

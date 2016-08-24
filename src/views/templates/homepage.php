@@ -19,7 +19,6 @@
         ]) ?>
     </section>
     <section class="featured-collection container">
-        
         <?= $view('inc.asset-collection',[
              'items' => 1,
              'cols' => 1,

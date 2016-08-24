@@ -1,4 +1,8 @@
+.nav-fixed  {
+	padding-top: 118px;
+}
 header {
+
 	#navbar {
 		position: relative;
 		margin-bottom: 0;
@@ -9,7 +13,6 @@ header {
 		}
 
 		.nav-container {
-			position: relative;
 			z-index: 999;
 		}
 
@@ -18,7 +21,42 @@ header {
 		    margin-bottom: 10px;
 		    float: left;
 		    padding: 2rem 0;
+		    width: 20rem;
+
+		    img {
+		    	width: 100%;
+		    }
 		}
 
+	}
+	.nav-fixed &  {
+		position: fixed;
+		width: 100%;
+		background-color: @white;
+		top: 0;
+		left: 0;
+		z-index: 999;
+		.animateTop(-120px);
+
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			bottom: -4px;
+			height: 4px;
+			width: 100%;
+			opacity: 0.2;
+			.gradient(top, to bottom,rgba(0,0,0,1),0);
+		}
+	}
+}
+
+@media all and (min-width: (@tablet_width + @scroll_bar)) {
+	header {
+		#navbar {
+			#logo {
+				width: auto;
+			}
+		}
 	}
 }

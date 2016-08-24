@@ -18,7 +18,7 @@
 		 	$item_template = 'standard';
 		endif;
 ?>
-<ul <?php if(isset($class)) :?> class="featured <?= $class ?> <?= $cols ?>"<?php endif ?>>
+<ul <?php if(isset($class)) :?> class="featured <?= $class ?> <?= $item_template ?> <?= $cols ?>"<?php endif ?>>
     <?php for ($i = 1; $i <= $items; $i++): ?>
     	<li><?= $chunk('feature', "features-$i")->template($item_template) ?></li><?php endfor ?>
 </ul>
