@@ -11367,7 +11367,8 @@ $(document).ready(function() {
 (function() {
         $(".album-images ul").lightGallery( {
         	selector: '.album-item',
-        	hideControlOnEnd: true
+        	hideControlOnEnd: true,
+        	subHtmlSelectorRelative: true
         }); 
   })();
 
