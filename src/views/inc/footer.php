@@ -1,12 +1,12 @@
         </main>
 <?php 
 	$home = $getPages([
-		'template' => Template::findByThemeAndFilename('theme-default', 'homepage')
+		'template' => Template::findByThemeAndFilename('demo', 'homepage')
 		]);
 ?>
         <footer id="footer">
             <p><a href="http://www.github.com/boomcms">BoomCMS on GitHub</a></p>
-            <p><a href="http://www.github.com/boomcms/theme-default">BoomCMS Default Theme</a></p>
+            <p><a href="http://www.github.com/boomcms/demo">BoomCMS Demo Theme</a></p>
             <div class="copy container">
 				<?= $chunk('text', 'footer', $home->first())->text() ?>
             </div>

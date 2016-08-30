@@ -3,7 +3,7 @@
 	<head>
 		<title><?= $page->getTitle() ?> | <?= Settings::get('site.name') ?></title>
 		
-		<link href="/vendor/boomcms/themes/theme-default/main.css" rel='stylesheet' type='text/css' />
+		<link href="/vendor/boomcms/themes/demo/main.css" rel='stylesheet' type='text/css' />
 		
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="<?= $page->getDescription() ?>" />
@@ -25,7 +25,7 @@
             <meta name='robots' content='noindex, nofollow' />
         <?php endif ?>
         <?php if (isset($album)): ?>
-        <link href="/vendor/boomcms/themes/theme-default/album.css" rel='stylesheet' type='text/css' />
+        <link href="/vendor/boomcms/themes/demo/album.css" rel='stylesheet' type='text/css' />
         <?php endif ?>
 
 

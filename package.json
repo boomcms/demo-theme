@@ -1,14 +1,14 @@
 {
-  "name": "theme-default",
+  "name": "demo",
   "version": "1.1.0",
-  "description": "BoomCMS default theme",
+  "description": "BoomCMS demo theme",
   "repository": {
     "type": "git",
-    "url": "git://github.com/boomcms/theme-default"
+    "url": "git://github.com/boomcms/demo"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/boomcms/theme-default/issues"
+    "url": "https://github.com/boomcms/demo/issues"
   },
   "devDependencies": {
     "grunt-cli": "~0.1.13",

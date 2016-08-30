@@ -1,6 +1,6 @@
 {
-  "name": "theme-default",
-  "description": "BoomCMS starter theme",
+  "name": "demo",
+  "description": "BoomCMS demo theme",
   "main": "",
   "authors": [
     "iulian_uxb <iulian@uxblondon.com>"
@@ -8,7 +8,7 @@
   "license": "MIT",
   "keywords": [
     "boomcms",
-    "starter",
+    "demo",
     "theme"
   ],
   "moduleType": [],
