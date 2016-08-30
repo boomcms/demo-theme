@@ -3,6 +3,7 @@
 <article id="main" role="main">
 
     <section id="content" class="container">
+        
         <h1 id="b-page-title"><?= $page->getTitle() ?></h1>
         <?= $chunk('text', 'standfirst')->setHtml('<h2>{text}</h2>') ?>
     </section>

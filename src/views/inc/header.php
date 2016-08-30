@@ -36,9 +36,16 @@
         <header>
             <nav id="navbar" class="container">
                     <div class="navbar-header">
-                  
-                        <a id="logo" href="/"><img src="/vendor/boomcms/themes/theme-default/img/logo.png" alt="BoomCMS logo" /></a>
-                   
+                    <?php if(isset($logo) && $logo == true) :?>
+                        <a id="logo" href="/">
+                        <?= $chunk('asset', 'logo')->template('logo') ?>
+                        </a>
+
+                    <?php else : ?>
+                        <?php $home_page = Page::findByUri('/'); 
+                        ?>
+                        <a id="logo" href="/"><?= $chunk('asset', 'logo', $home_page)->template('logo') ?></a>
+                    <?php endif ?>
                     </div>
                         
                     <div class="nav-container">

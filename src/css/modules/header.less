@@ -1,7 +1,8 @@
 .nav-fixed  {
-	padding-top: 118px;
+
 }
 header {
+	
 
 	#navbar {
 		position: relative;
@@ -29,6 +30,12 @@ header {
 		}
 
 	}
+
+	.mobile-menu-open &  {
+		overflow: auto;
+		max-height: 100%;
+		height: auto;
+	}
 	.nav-fixed &  {
 		position: fixed;
 		width: 100%;
@@ -36,23 +43,17 @@ header {
 		top: 0;
 		left: 0;
 		z-index: 999;
+		box-shadow: 0 0 5px fade(@black, 97%);
 		.animateTop(-120px);
-
-		&:after {
-			content: '';
-			display: block;
-			position: absolute;
-			bottom: -4px;
-			height: 4px;
-			width: 100%;
-			opacity: 0.2;
-			.gradient(top, to bottom,rgba(0,0,0,1),0);
-		}
 	}
 }
 
 @media all and (min-width: (@tablet_width + @scroll_bar)) {
 	header {
+		.nav-fixed &  {
+			height: auto;
+			overflow: inherit;
+		}
 		#navbar {
 			#logo {
 				width: auto;

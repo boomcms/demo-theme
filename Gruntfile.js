@@ -25,6 +25,7 @@ module.exports = function(grunt) {
 	  			src: [
 	  				'bower_components/jquery/dist/jquery.js',
 					'bower_components/lightgallery/dist/js/lightgallery.min.js',
+					'bower_components/smartmenus/dist/jquery.smartmenus.js',
 					'src/js/resizeImages.js',
 					'src/js/album-scripts.js',
 					'src/js/main.js'

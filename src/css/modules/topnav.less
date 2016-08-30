@@ -4,13 +4,14 @@
 			box-shadow: none;
 			border: 0;
 			margin-bottom: 2rem;
+			z-index: 999;
+			
 
 			> li > ul  {
 				border: 0;
-				box-shadow: none;
 			}
 		
-			 li.active a {
+			 li.active > a {
 				color: @blue;
 				font-weight: bold;
 				background-color: lighten(@blue, 70%);
@@ -40,7 +41,7 @@
 
 		.main-menu-btn-text  {
 			position: absolute;
-			top: -99999px;
+			top: -9999px;
 		}
 
 		.main-menu-btn-icon, .main-menu-btn-icon:before, .main-menu-btn-icon:after {

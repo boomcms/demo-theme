@@ -1,8 +1,9 @@
 <?php 
-$parent = $page->getParent(); 
+$parent = $page->getParent();
 if(!isset($back_text)) :
 	$back_text = '';
 endif;
+
 if($parent) :
 ?>
 <nav id="back-to-parent">

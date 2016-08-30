@@ -1,12 +1,13 @@
 <?= $view('inc.header') ?>
 
 <article id="main" role="main">
-
-
-
         <section id="content" class="container">
+        <?= $view('inc.siblings-nav',[
+        	'back_text' => 'More from'
+        ]) ?>
         <h1 id="b-page-title"><?= $page->getTitle() ?></h1>
         <?= $chunk('text', 'standfirst')->setHtml('<div class="standfirst">{text}</div>') ?>
+       
         <?= $chunk('text', 'bodycopy') ?>
         </section>
 

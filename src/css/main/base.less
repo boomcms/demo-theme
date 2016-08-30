@@ -93,6 +93,18 @@ blockquote {
     }
 }
 
-#featured, #content, #footer, .asset-collection, .slideshow-list, #bodytext, #banner_container {
+ul li a {
+    .overlay {
+        transition: opacity .2s;
+    }
+
+    &:hover {
+        .overlay {
+            opacity: 0.3;
+        }
+    }
+}
+
+#featured, #content, #footer, .asset-collection, .slideshow-list, .carousel-list, #bodytext, #banner_container , .editable {
     .fixEditable;
 }

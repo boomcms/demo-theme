@@ -9,13 +9,6 @@
         <?= $chunk('text', 'bodycopy') ?>
         </section>
           
-          <aside class="sidebar features">
-            <?= $view('inc.features',[
-                'title' => 'Features',
-                'items' => 6,
-                'class' => 'landing-featured'
-            ]) ?>
-        </aside>
     </section>
 </article>
 

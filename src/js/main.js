@@ -7,13 +7,36 @@
 	$(window)
 	.on('scroll', function()  {
 		v_scroll = $(window).scrollTop();
-		if(v_scroll + v_padding > v_height){
-			$body.addClass('nav-fixed');
+		if(v_scroll + v_padding > v_height) {
+			$body.css({
+				paddingTop: $body.find('#navbar').height()
+			}).addClass('nav-fixed');
 		}
 		else {
-			$body.removeClass('nav-fixed');
+			$body.removeClass('nav-fixed').css({
+				paddingTop: 0
+			})
 		}
 	})
+
+	/*
+	body togglers events
+	 */
+	
+	if($('#sidebar').length) {
+		var $sidebar_nav = $('#sidebar');
+		$body
+		.on('click', '#sidebar_nav_open', function() {
+			$body.addClass('sidebar-open');
+		})
+		.on('click', '#sidebar_nav_close', function() {
+			$body.removeClass('sidebar-open');
+		});
+	}
+	/*
+	Mobile view menu adjustments
+	 */
+	
 	// init resp menu scripts
 	var $topnav = $('#topnav');
 	 $topnav.smartmenus({ 
@@ -21,6 +44,13 @@
 	 	markCurrentTree: true,
 	 	keepHighlighted: true
 	 });
+	 	$body.on('click', 'label.main-menu-btn', function() {
+			if($('#main-menu-state').is(':checked')) {
+				$body.removeClass('mobile-menu-open');
+			} else {
+				$body.addClass('mobile-menu-open');
+			}
+		});
 		// add menu show hide toggle button on mobile
 	var $mainMenuState = $('#main-menu-state');
 	if ($mainMenuState.length) {

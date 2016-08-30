@@ -1,0 +1,1 @@
+<a href="#" class="asset-caption asset-title asset-link b-edit"><?= $placeholder ?></a>

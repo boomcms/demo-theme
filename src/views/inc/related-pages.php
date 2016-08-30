@@ -31,7 +31,6 @@
                 <a href="<?= $p->url() ?>"<?php if ($p->is($page)): ?> class="active"<?php endif ?>>
                 <img class="image" src="<?= $assetURL(['asset' => $p->getFeatureImageId(), 'width' => 400]) ?>" alt="<?= $p->getTitle() ?>">
                 <h4><?= $p->getTitle() ?></h4>
-                	
                 </a>
             </li>
 

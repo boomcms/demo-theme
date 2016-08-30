@@ -1,4 +1,4 @@
-<header id="banner" class="page-header">
+<div id="banner" class="page-header">
 <div id="slideshow" class="flexslider <?php if(count($slides) == 1) : ?>single-slide<?php endif ?>">
     <ul class="slides">
         <?php foreach ($slides as $slide): ?>

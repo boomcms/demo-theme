@@ -1,0 +1,1 @@
+<img src="<?= $assetURL(['asset' => $asset(), 'width' => 300]) ?>" alt="<?= $asset()->getTitle() ?>">
