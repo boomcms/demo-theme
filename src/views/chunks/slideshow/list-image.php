@@ -1,5 +1,6 @@
 <?php if (count($slides)) : ?>
-<ul>
+
+<ul class="slides-<?= count($slides) ?>">
 <?php foreach ($slides as $slide): ?>
 <?php if ($slide->getAssetId()) : ?>
 <?php

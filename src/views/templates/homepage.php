@@ -45,7 +45,7 @@
              'items' => 1,
              'cols' => 1,
              'class' => 'showcase-collection2',
-             'chunk_name' => 'collection2', //must not colide with other instances
+             'chunk_name' => 'collection_2', //must not colide with other instances
              'item_template' => '',
              'placeholder_text' => 'Insert a Collection'
         ]) ?>

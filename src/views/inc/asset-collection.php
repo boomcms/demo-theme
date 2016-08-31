@@ -30,7 +30,7 @@
 	<?php endfor ?>
 	</div>
 <?php else : ?>
-	<div class="asset-collection cols-1">
+	<div class="asset-collection">
   	  <?= $chunk('asset', $namespace)->template($template)->setFilterByType('image')->setPlaceHolderText($placeholder_text) ?>
   	  </div>
   <?php endif ?>

@@ -32,7 +32,7 @@
         
     </head>
 
-    <body>
+    <body <?php if(Editor::isEnabled()) :?> class="edit-mode"<?php endif ?>>
         <header>
             <nav id="navbar" class="container">
                     <div class="navbar-header">

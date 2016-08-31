@@ -1,5 +1,5 @@
-<a href="<? $target->url() ?>"> 
-    <span class="bgimage" data-asset="<?= $target->getFeatureImageId() ?>"></span>
+<a href="<?= $target->url() ?>">  
+    <span class="bgimage" data-asset="<?= $target->getFeatureImageId()?>"></span> 
     <span class="overlay"></span>
     <span class="description">
     <h3><?= $target->getTitle() ?></h3>
