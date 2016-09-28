@@ -19,7 +19,7 @@
         <h1 id="b-page-title"><?= $page->getTitle() ?></h1>
 
         <h2 class="date">
-            <time datetime="<?= $page->getVisibleFrom()->format('Y-m-d H:i:s') ?>" pubdate>
+            <time class="b-page-visibility" datetime="<?= $page->getVisibleFrom()->format('Y-m-d H:i:s') ?>" pubdate>
                 <?= $page->getVisibleFrom()->format('d M Y') ?>
             </time>
         </h2>
