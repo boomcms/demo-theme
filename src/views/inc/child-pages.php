@@ -29,13 +29,13 @@
 		<?php $published_date = $p->getLastPublishedTime(); ?>
 		<li><a href="<?= $p->url() ?>"> 
 		    <span class="bgimage" data-asset="<?= $p->getFeatureImageId() ?>"></span>
-		    <span class="overlay"></span>
-		    <div class="description">
-		    <h3 ><?= $p->getTitle() ?></h3>
-		    <p><?= $chunk('text', 'standfirst', $p)->text() ?></p>
-		    <?php if ($published_date) : ?>
-		    	<span class="date"><time datetime="<?= $published_date->format('Y-m-d H:i:s') ?>" pubdate><?= $published_date->format('d M Y') ?></time></span>
-			<?php endif ?>
+
+            <div class="description">
+                <h3 ><?= $p->getTitle() ?></h3>
+                <p><?= $chunk('text', 'standfirst', $p)->text() ?></p>
+                <?php if ($published_date) : ?>
+                    <span class="date"><time datetime="<?= $published_date->format('Y-m-d H:i:s') ?>" pubdate><?= $published_date->format('d M Y') ?></time></span>
+                <?php endif ?>
 		    </div>
 		</a>
 		</li>

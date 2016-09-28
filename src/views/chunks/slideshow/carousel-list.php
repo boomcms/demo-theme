@@ -11,7 +11,7 @@
                     <a href="<?php if($link) :?><?= $link ?><?php else : ?>javascript:void()<?php endif ?>" class="slide-link">
                     <span class="bgimage" data-asset="<?= $slide->getAssetId() ?>" data-width="400" data-height="300">
                     </span>
-                    <span class="overlay"></span>
+
                     <?php if($title || $caption) : ?> 
                     <div class="description">
                         <?php if($title) : ?>

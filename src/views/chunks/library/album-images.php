@@ -14,7 +14,7 @@ $credits = $slide->getCredits();
 ?>
 <li>
    <a href="<?= $assetURL(['asset' => $slide->getId(), 'width' => 1600]) ?>" class="album-item" <?php if($title || $caption) : ?>data-sub-html=".description"<?php endif ?>><img src="<?= $assetURL(['asset' => $slide->getId(), 'width' => 600]) ?>" alt="<?= $title ?>" />
-    <span class="overlay"></span>
+
     <?php if($credits) : ?>
        <span class="credits"><?= $credits ?></span>
        <?php endif; ?> 

@@ -4,7 +4,7 @@
         <?php foreach ($slides as $slide): ?>
             <li>
                 <span class="bgimage" data-asset="<?= $slide->getAssetId() ?>" style="background-image: url(<?= $assetURL(['id' => $slide->getAssetId(), 'width' => 1200])?>)"></span>
-                <span class="overlay"></span>
+
                 <div class="flex-caption">
                     <div class="container">
                          <h3 class="slide-title slide-link"><?php if($slide->getLink() != '') :?><a href="<?= $slide->getLink() ?><?= $slide->getTitle() ?>"></a><?php else : ?><?= $slide->getTitle() ?><?php endif ?></h3>
