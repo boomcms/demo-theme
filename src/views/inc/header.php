@@ -3,10 +3,10 @@
 	<head>
 		<title><?= $page->getTitle() ?> | <?= Settings::get('site.name') ?></title>
 		
-		<link href="/vendor/boomcms/themes/demo/main.css" rel='stylesheet' type='text/css' />
+		<link href="<?= $pub('main.css') ?>" rel='stylesheet' type='text/css' />
 		
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="<?= $page->getDescription() ?>" />
+        <meta name="description" content="<?= $description() ?>" />
         <meta name="keywords" content="<?= $page->getKeywords() ?>" />
         
         <meta property="og:type" content="website">
@@ -24,39 +24,35 @@
         <?php else: ?>
             <meta name='robots' content='noindex, nofollow' />
         <?php endif ?>
+
         <?php if (isset($album)): ?>
-        <link href="/vendor/boomcms/themes/demo/album.css" rel='stylesheet' type='text/css' />
+            <link href="/vendor/boomcms/themes/demo/album.css" rel='stylesheet' type='text/css' />
         <?php endif ?>
-
-
-        
     </head>
 
-    <body <?php if(Editor::isEnabled()) :?> class="edit-mode"<?php endif ?>>
+    <body <?php if (Editor::isEnabled()): ?> class="edit-mode"<?php endif ?>>
         <header>
             <nav id="navbar" class="container">
-                    <div class="navbar-header">
+                <div class="navbar-header">
                     <?php if(isset($logo) && $logo == true) :?>
                         <a id="logo" href="/">
-                        <?= $chunk('asset', 'logo')->template('logo') ?>
+                            <?= $chunk('asset', 'logo')->template('logo') ?>
                         </a>
-
-                    <?php else : ?>
-                        <?php $home_page = Page::findByUri('/'); 
-                        ?>
+                    <?php else: ?>
+                        <?php $home_page = Page::findByUri('/') ?>
                         <a id="logo" href="/"><?= $chunk('asset', 'logo', $home_page)->template('logo') ?></a>
                     <?php endif ?>
-                    </div>
-                        
-                    <div class="nav-container">
-                     <input id="main-menu-state" type="checkbox" />
+                </div>
+
+                <div class="nav-container">
+                    <input id="main-menu-state" type="checkbox" />
+
                     <label class="main-menu-btn" for="main-menu-state">
-                    <span class="main-menu-btn-icon"></span> <span class="main-menu-btn-text">Toggle main menu visibility</span> <span class="main-menu-btn-title" aria-hidden="true"><span aria-hidden="true" data-icon="h"></span></span>
-                   </label>
-                        <?= $view('inc.menu', [
-                            'child_items' => true
-                        ]) ?>
-                    </div>
+                        <span class="main-menu-btn-icon"></span> <span class="main-menu-btn-text">Toggle main menu visibility</span> <span class="main-menu-btn-title" aria-hidden="true"><span aria-hidden="true" data-icon="h"></span></span>
+                    </label>
+
+                    <?= $view('inc.menu', ['child_items' => true]) ?>
+                </div>
             </nav>
         </header>
         

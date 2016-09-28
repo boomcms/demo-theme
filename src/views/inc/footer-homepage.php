@@ -1,13 +1,13 @@
         </main>
 
         <footer id="footer"> 
-            <p><a href="http://www.github.com/boomcms">BoomCMS on GitHub</a></p>
-            <p><a href="http://www.github.com/boomcms/demo">BoomCMS Default Theme</a></p>
             <div class="copy container">
                 <?= $chunk('text', 'footer')->setPlaceHolderText('Insert website footer text') ?>
             </div>
         </footer>
-         <?= $view('inc.main-scripts') ?>
-        <!-- starter-theme -->
+
+        <?= $view('inc.main-scripts') ?>
+
+        <!-- boomcms-demo -->
     </body>
 </html>
