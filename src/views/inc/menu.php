@@ -5,8 +5,8 @@
         <a href="/">Home</a>
     </li>
 
-    <?php foreach ($getPages(['parent' => $homepage, 'visibleinnavigation']) as $child): ?>
-        <?php $subpages = $getPages(['parent' => $child, 'visibleinnavigation']) ?>
+    <?php foreach ($getPages(['parent' => $homepage, 'visibleinnavigation' => true]) as $child): ?>
+        <?php $subpages = $getPages(['parent' => $child, 'visibleinnavigation' => true]) ?>
 
         <li <?php if ($child->is($page)): ?> class="active"<?php endif ?>>
             <a href="<?= $child->url() ?>">
