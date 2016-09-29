@@ -5,7 +5,7 @@
     <section id="content" class="container">
         
         <h1 id="b-page-title"><?= $page->getTitle() ?></h1>
-        <?= $chunk('text', 'standfirst')->setHtml('<h2>{text}</h2>') ?>
+        <?= $chunk('text', 'standfirst') ?>
     </section>
     <?= $view('inc.slideshow') ?> 
     <section id="bodytext" class="container">

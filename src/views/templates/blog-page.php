@@ -24,7 +24,7 @@
             </time>
         </h2>
 
-        <?= $chunk('text', 'standfirst')->setHtml('<div class="standfirst">{text}</div>') ?>
+        <?= $chunk('text', 'standfirst') ?>
         <?= $chunk('text', 'bodycopy')->setHtml('<div class="text">{text}</div>') ?>
         <?= $chunk('asset', 'cta')->template('cta')->setPlaceHolderText('Insert Call to Action') ?>
     </section>

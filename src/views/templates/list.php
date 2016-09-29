@@ -4,7 +4,7 @@
 
         <section id="content" class="container">
         <h1 id="b-page-title"><?= $page->getTitle() ?></h1>
-        <?= $chunk('text', 'standfirst')->setHtml('<div class="standfirst">{text}</div>') ?>
+        <?= $chunk('text', 'standfirst') ?>
         <?= $chunk('text', 'bodycopy') ?>
         </section>
 

@@ -2,27 +2,33 @@
 	overflow: hidden;
 }
 .child-pages {
-	ul {
-		.negativeMargin;
-		li {
-			padding-bottom: 1rem;
+	margin: -1rem;
 
-			a {
-				position: relative;
-				height: 30rem;
-				width: 100%;
-				display: block;
-				text-shadow: 0 1px 1px darken(@blue, 50%);
+    li {
+        padding: 1rem;
 
-				.listItemAnchor;
+        a {
+            .listItemAnchor;
+            position: relative;
+            height: 30rem;
+            width: 100%;
+            display: block;
+            text-shadow: 0 1px 1px darken(@blue, 50%);
 
-				.date {
-					color: lighten(@blue, 30%);
+            &:hover, &:focus {
+                .date {
+                    color: lighten(@blue, 30%);
+                }
+            }
 
-				}
-			}
-		}
-	}
+            .date {
+                padding: 0 2rem;
+                margin: 0 0 2rem 0;
+                display: block;
+                color: @white;
+            }
+        }
+    }
 }
 
 @media all and (min-width: (@large_width  + @scroll_bar)) {

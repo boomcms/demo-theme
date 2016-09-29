@@ -5,7 +5,7 @@
             'back_text' => 'Back to'
         ]) ?>
 		<h1 id="b-page-title"><?= $page->getTitle() ?></h1>
-		<?= $chunk('text', 'standfirst')->setHtml('<div class="standfirst">{text}</div>') ?>
+		<?= $chunk('text', 'standfirst') ?>
         <?= $chunk('text', 'bodycopy')->setHtml('<div class="text">{text}</div>') ?>
 	</section>
 

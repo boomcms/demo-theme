@@ -1,6 +1,5 @@
-#banner_container{
-	
-		a.default {
+#banner_container {
+    a.default {
 		display: block;
 		line-height: 10rem;
 		font-size: 3rem;
@@ -26,6 +25,7 @@
 				height: 100%;
 				margin: 0;
 				padding: 0;
+
 				> li  {
 					width: 100%;
 					height: 100%;
@@ -44,16 +44,23 @@
 						}
 
 						h3, p {
-							margin: 1rem 0;
 							color: @white;
 						}
 
+                        h3 {
+                            margin: 0 0 2.5rem 0;
+                        }
+
+                        p {
+                            margin: 0 0 5rem 0;
+                        }
+
 						a {
 							color: @white;
+
 							&:hover {
 								color: lighten(@blue, 30%);
 							}
-
 						}
 					}
 				}
