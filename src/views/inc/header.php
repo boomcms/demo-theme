@@ -13,7 +13,9 @@
         <meta property="og:site_name" content="<?= Settings::get('site.name') ?>">
         <meta property="og:url" content="<?= $page->url() ?>">
         <meta property="og:title" content="<?= $page->getTitle() ?>">
-        <meta property="og:description" content="<?= $page->getDescription() ?>">
+        <meta property="og:description" content="<?= $description() ?>">
+
+        <?= $analytics() ?>
         
         <?php if ($page->hasFeatureImage()): ?>
             <meta property="og:image" content="<?= $assetURL(['id' => $page->getFeatureImageId(), 'width' => 200]) ?>">
