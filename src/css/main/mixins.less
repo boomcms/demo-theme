@@ -318,34 +318,3 @@
 	  }
 	}
 }
-
-
-
-.highlightBreaks(@element: body) {
-
-	 @{element} {
-		@media all and (min-width: (@mobile_width + @scroll_bar)) {
-		        background: @colorMobile; /* Orange */
-		}
-
-		@media all and (min-width: (@tiny_width + @scroll_bar)) {
-		        background: @colorTiny; /* Yellowish */
-		}
-
-		@media all and (min-width: (@tablet_width + @scroll_bar)) {
-		        background: @colorTablet; /*Faded Crimsons*/
-		}
-
-		@media all and (min-width: (@small_width + @scroll_bar)) {
-		        background: @colorSmall; /* Pink? */
-		}
-
-		@media all and (min-width: (@medium_width + @scroll_bar)) {
-		        background: @colorMedium; /* Blue */
-		}      
-
-		@media all and (min-width: (@large_width  + @scroll_bar)) {
-		        background: @colorBig; /* Greenish */
-		}
-	}
-}
