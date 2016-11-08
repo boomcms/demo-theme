@@ -12,7 +12,7 @@
 
                 <li>
                     <a href="<?= $assetURL(['asset' => $asset, 'width' => 1600]) ?>" class="album-item" <?php if ($caption): ?>data-sub-html=".description"<?php endif ?>>
-                        <img src="<?= $assetURL(['asset' => $asset, 'width' => 600]) ?>" alt="<?= $asset->getTitle() ?>" />
+                        <img src="<?= $assetURL(['asset' => $asset, 'width' => 600, 'action' => 'crop', 'height' => 400]) ?>" alt="<?= $asset->getTitle() ?>" />
 
                         <?php if($credits) : ?>
                             <span class="credits"><?= $credits ?></span>
