@@ -35,9 +35,9 @@
     endif;
 ?>
 <div class="<?= $layout ?>-list <?php if(isset($class)) : ?><?= $class ?><?php endif ?> <?= $cols ?>">
-<?php if(isset($show_title) && $show_title === true) :?>
-    <?= $chunk('text', $namespace.'title')->setHtml('<h2>{text}</h2>') ?>
-<?php endif ?>
-<?= $chunk('slideshow', $namespace)->template($template)->setPlaceHolderText($placeholder_text) ?>
+    <?php if(isset($show_title) && $show_title === true) :?>
+        <?= $chunk('text', $namespace.'title')->setHtml('<h2>{text}</h2>') ?>
+    <?php endif ?>
 
+    <?= $chunk('slideshow', $namespace)->template($template)->setPlaceHolderText($placeholder_text) ?>
 </div>

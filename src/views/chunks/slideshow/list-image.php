@@ -1,26 +1,25 @@
-<?php if (count($slides)) : ?>
+<?php if (count($slides)): ?>
+    <ul class="slides-<?= count($slides) ?>">
+        <?php foreach ($slides as $slide): ?>
+            <?php if ($slide->getAssetId()): ?>
+                <li class="slide-title slide-caption" >
+                    <a href="<?= $assetURL(['asset' => $slide->getAssetId(), 'width' => 1600]) ?>" class="album-item" >
+                        <img src="<?= $assetURL(['asset' => $slide->getAssetId(), 'width' => 600]) ?>" alt="<?= $slide->getTitle() ?>" />
 
-<ul class="slides-<?= count($slides) ?>">
-<?php foreach ($slides as $slide): ?>
-<?php if ($slide->getAssetId()) : ?>
-<?php
-$title = $slide->getTitle();
-$caption = $slide->getCaption();
-?>
-<li class="slide-title slide-caption" >
-    <a href="<?= $assetURL(['asset' => $slide->getAssetId(), 'width' => 1600]) ?>" class="album-item" ><img src="<?= $assetURL(['asset' => $slide->getAssetId(), 'width' => 600]) ?>" alt="<?= $title ?>" />
+                        <?php if ($slide->getTitle() || $slide->getCaption()): ?>
+                            <div class="description">
+                                <?php if ($slide->getTitle()): ?>
+                                    <h3 class="slide-title"><?= $slide->getTitle() ?></h3>
+                                <?php endif ?>
 
-    <?php if($title || $caption) : ?><div class="description">
-    <?php if($title) : ?>
-         <h3 class="slide-title"><?= $title ?></h3>
-    <?php endif ?>
-    <?php if($caption) : ?>
-         <p class="slide-caption"><?= $caption ?></p>
-    <?php endif?>    
-       </div>
-    <?php endif ?>
-    </a>
-</li><?php endif ?>    
-<?php endforeach ?>
-</ul>
+                                <?php if ($slide->getCaption()): ?>
+                                    <p class="slide-caption"><?= $slide->getCaption() ?></p>
+                                <?php endif?>    
+                            </div>
+                        <?php endif ?>
+                    </a>
+                </li>
+            <?php endif ?>    
+        <?php endforeach ?>
+    </ul>
 <?php endif ?>
