@@ -1,26 +1,28 @@
 <!DOCTYPE HTML>
 <html dir="ltr" lang="en-GB"> 
-	<head>
-		<title><?= $page->getTitle() ?> | <?= Settings::get('site.name') ?></title>
-		
-		<link href="<?= $pub('main.css') ?>" rel='stylesheet' type='text/css' />
-		
+    <head>
+        <title><?= $page->getTitle() ?> | <?= Settings::get('site.name') ?></title>
+
+        <link href="<?= $pub('main.css') ?>" rel='stylesheet' type='text/css' />
+
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="<?= $description() ?>" />
         <meta name="keywords" content="<?= $page->getKeywords() ?>" />
-        
+
         <meta property="og:type" content="website">
         <meta property="og:site_name" content="<?= Settings::get('site.name') ?>">
         <meta property="og:url" content="<?= $page->url() ?>">
         <meta property="og:title" content="<?= $page->getTitle() ?>">
         <meta property="og:description" content="<?= $description() ?>">
 
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+
         <?= $analytics() ?>
-        
+
         <?php if ($page->hasFeatureImage()): ?>
             <meta property="og:image" content="<?= $assetURL(['id' => $page->getFeatureImageId(), 'width' => 200]) ?>">
         <?php endif ?>
-            
+
         <?php if ($page->allowsExternalIndexing()): ?>
             <meta name='robots' content='index, follow' />
         <?php else: ?>
@@ -57,5 +59,5 @@
                 </div>
             </nav>
         </header>
-        
+
         <main id="wrapper">
