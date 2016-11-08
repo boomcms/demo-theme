@@ -53,7 +53,7 @@
 
     <section id="bodytext" class="container">
         <?= $chunk('text', 'standfirst2')->setPlaceholderText('Insert title')->setHtml('<h3>{text}</h3>') ?>
-        <?= $chunk('text', 'bodycopy2') ?>
+        <?= $chunk('text', 'bodycopy2')->setHtml('<div class="text">{text}</div>') ?>
     </section>
 </article>
 
