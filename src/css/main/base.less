@@ -8,6 +8,11 @@ body {
     line-height: 1.6em;
     margin: 0;
     overflow-x: hidden;
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+    }
 }
 
 #content, #bodytext {
@@ -28,20 +33,10 @@ body {
         margin-bottom: 2rem;
     }
 
-    h2 {
-        text-align: left;
-        margin-top: 0;
-        margin-bottom: 1rem;
-    }
-
     img  {
         max-width: 100%;
         width: auto;
         height: auto;
-    }
-
-    p {
-        line-height: 1.7;
     }
 
     main {
@@ -65,11 +60,6 @@ body {
             color: @blue;   
         }
     }
-}
-
-section {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
 }
 
 blockquote {

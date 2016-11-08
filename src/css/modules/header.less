@@ -1,63 +1,58 @@
-.nav-fixed  {
-
-}
 header {
-	
+    #navbar {
+        .clear;
+        position: relative;
+        margin-bottom: 0;
 
-	#navbar {
-		position: relative;
-		margin-bottom: 0;
-		.clear;
-		
-		.navbar-header {
-			float: left;
-		}
+        .navbar-header {
+            float: left;
+        }
 
-		.nav-container {
-			z-index: 999;
-		}
+        .nav-container {
+            z-index: 999;
+        }
 
-		#logo {
-		    height: auto;
-		    margin-bottom: 10px;
-		    float: left;
-		    padding: 2rem 0;
-		    width: 20rem;
+        #logo {
+            height: auto;
+            margin-bottom: 10px;
+            float: left;
+            padding: 2rem 0;
+            width: 20rem;
 
-		    img {
-		    	width: 100%;
-		    }
-		}
+            img {
+                width: 100%;
+            }
+        }
+    }
 
-	}
+    .mobile-menu-open & {
+        overflow: auto;
+        max-height: 100%;
+        height: auto;
+    }
 
-	.mobile-menu-open &  {
-		overflow: auto;
-		max-height: 100%;
-		height: auto;
-	}
-	.nav-fixed &  {
-		position: fixed;
-		width: 100%;
-		background-color: @white;
-		top: 0;
-		left: 0;
-		z-index: 999;
-		box-shadow: 0 0 5px fade(@black, 97%);
-		.animateTop(-120px);
-	}
+    .nav-fixed & {
+        .animateTop(-120px);
+        position: fixed;
+        width: 100%;
+        background-color: @white;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        border-bottom: 1px solid @dark-grey;
+    }
 }
 
 @media all and (min-width: (@tablet_width + @scroll_bar)) {
-	header {
-		.nav-fixed &  {
-			height: auto;
-			overflow: inherit;
-		}
-		#navbar {
-			#logo {
-				width: auto;
-			}
-		}
-	}
+    header {
+        .nav-fixed &  {
+            height: auto;
+            overflow: inherit;
+        }
+        #navbar {
+            #logo {
+                width: auto;
+            }
+        }
+    }
 }
