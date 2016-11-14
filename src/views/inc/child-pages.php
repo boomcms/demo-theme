@@ -26,7 +26,7 @@
 		<?php endif ?>
 		<ul class="cols-<?= $cols ?>">
 		<?php foreach($pages as $p) : ?>
-		<?php $published_date = $p->getLastPublishedTime(); ?>
+		<?php $published_date = $p->getVisibleFrom(); ?>
 		<li><a href="<?= $p->url() ?>"> 
 		    <span class="bgimage" data-asset="<?= $p->getFeatureImageId() ?>"></span>
 
