@@ -26,13 +26,7 @@
         <?= $chunk('text', 'bodycopy') ?>
     </section>
 
-    <?= $view('inc.related-pages', [
-        'pages' => $getPages([
-            'parent' => $page->getParent(),
-            'visibleinnavigation' => true,
-            'limit' => 3
-        ]),
-    ]) ?>
+    <?= $view('inc.related-pages') ?>
 </article>
 
 <?= $view('inc.footer') ?>
