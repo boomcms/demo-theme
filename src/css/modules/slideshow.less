@@ -68,31 +68,32 @@
 
 			.flex-navigation .container {
 				position: relative;
-
 			}
 
 			.flex-control-paging {
 				position: absolute;
-				bottom: 10rem;
-				right: 2rem;
+				bottom: 1.5rem;
+				left: 50%;
+                transform: translateX(-50%);
 				padding: 0;
 				z-index: 999;
 
 				li {
 					display: inline-block;
+
 					a {
-						border: 1px solid fade(@white, 30%);
-						width: 2.4rem;
-						height: 2.4rem;
+						border: 1px solid @dark-grey;
+						width: 3rem;
+						height: 3rem;
 						display: block;
 
 						&:hover {
-							border-color: @white;
+							background: @dark-grey;
 						}
-					}
 
-					a.flex-active {
-						background: fade(@white, 30%);
+                        &.flex-active {
+                            background: @dark-grey;
+                        }
 					}
 				}
 			}
@@ -100,13 +101,6 @@
 	}
 }
 
-
-@media all and (min-width: (@tablet_width + @scroll_bar)) {
-#banner_container #banner #slideshow .flex-control-paging li a {
-		width: 1.5rem;
-		height: 1.5rem;
-	}
-}
 @media all and (min-width: (@large_width + @scroll_bar)) {
 #banner_container #banner {
 		height: @slideshow_height+10rem;
