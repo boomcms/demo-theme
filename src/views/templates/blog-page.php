@@ -17,15 +17,13 @@
         ]) ?>
 
         <h1 id="b-page-title"><?= $page->getTitle() ?></h1>
-
-        <h2 class="date">
-            <time class="b-page-visibility" datetime="<?= $page->getVisibleFrom()->format('Y-m-d H:i:s') ?>" pubdate>
-                <?= $page->getVisibleFrom()->format('d M Y') ?>
-            </time>
-        </h2>
-
         <?= $chunk('text', 'standfirst') ?>
-        <?= $chunk('text', 'bodycopy')->setHtml('<div class="text">{text}</div>') ?>
+
+        <time class="b-page-visibility" datetime="<?= $page->getVisibleFrom()->format('Y-m-d H:i:s') ?>" pubdate>
+            <?= $page->getVisibleFrom()->format('jS F Y') ?>
+        </time>
+
+        <?= $chunk('text', 'bodycopy') ?>
         <?= $chunk('asset', 'cta')->template('cta')->setPlaceHolderText('Insert Call to Action') ?>
     </section>
 

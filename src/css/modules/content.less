@@ -1,0 +1,66 @@
+.content {
+    padding: 5rem 0;
+
+    > * + * {
+        margin-top: 1.5rem;
+    }
+
+    * {
+        max-width: 800px;
+    }
+
+    h2 {
+        color: @blue;
+        margin-top: 2rem;
+        font-weight: 600;
+    }
+
+    h3 {
+        color: fade(@black, 70%);
+    }
+
+    .date {
+        margin-bottom: 2rem;
+    }
+
+    img  {
+        max-width: 100%;
+        width: auto;
+        height: auto;
+    }
+
+    a {
+        color: @blue;
+        text-decoration: none;
+
+        &:hover, &:focus {
+            text-decoration: underline;
+        }
+    }
+
+    p.cta a, a.cta {
+        display: block;
+        text-transform: uppercase;
+        padding: 1rem;
+        text-align: center;
+        margin: 5rem 0;
+        background: @blue;
+        color: @white;
+
+        &[href*="github.com"] {
+            &:before {
+                display: inline-block;
+                content: "\f09b";
+                font-family: 'FontAwesome';
+                margin-right: 2rem;
+                font-size: 2em;
+                vertical-align: bottom;
+            }
+        }
+
+        &:hover, &:focus {
+            text-decoration: none;
+            background: @red;
+        }
+    }
+}

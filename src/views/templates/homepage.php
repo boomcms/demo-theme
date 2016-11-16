@@ -8,7 +8,7 @@
     <section id="content" class="container">
         <h1 id="b-page-title"><?= $page->getTitle() ?></h1>
         <?= $chunk('text', 'standfirst') ?>
-        <?= $chunk('text', 'bodycopy')->setHtml('<main>{text}</main>') ?>
+        <?= $chunk('text', 'bodycopy') ?>
     </section>
 
     <section id="featured">
@@ -51,10 +51,10 @@
         ]) ?>
     </section>
 
-    <section id="bodytext" class="container">
+    <div class="container">
         <?= $chunk('text', 'standfirst2')->setPlaceholderText('Insert title')->setHtml('<h3>{text}</h3>') ?>
-        <?= $chunk('text', 'bodycopy2')->setHtml('<div class="text">{text}</div>') ?>
-    </section>
+        <?= $chunk('text', 'bodycopy2')->setHtml('<div class="content">{text}</div>') ?>
+    </div>
 </article>
 
 <?= $view('inc.footer-homepage') ?>

@@ -8,9 +8,9 @@
 
     <?= $view('inc.slideshow') ?>
 
-    <section id="bodytext" class="container">
-        <?= $chunk('text', 'bodycopy')->setHtml('<main>{text}</main>') ?>
-    </section>
+    <div class="container">
+        <?= $chunk('text', 'bodycopy') ?>
+    </div>
 
     <?= $view('inc.child-pages', [
         'pages' => $getPages([

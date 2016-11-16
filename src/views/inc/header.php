@@ -3,42 +3,28 @@
     <head>
         <title><?= $page->getTitle() ?> | <?= Settings::get('site.name') ?></title>
 
-        <link href="<?= $pub('main.css') ?>" rel='stylesheet' type='text/css' />
-
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="<?= $description() ?>" />
-        <meta name="keywords" content="<?= $page->getKeywords() ?>" />
-
-        <meta property="og:type" content="website">
-        <meta property="og:site_name" content="<?= Settings::get('site.name') ?>">
-        <meta property="og:url" content="<?= $page->url() ?>">
-        <meta property="og:title" content="<?= $page->getTitle() ?>">
-        <meta property="og:description" content="<?= $description() ?>">
-
-        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-
-        <?= $analytics() ?>
-
-        <?php if ($page->hasFeatureImage()): ?>
-            <meta property="og:image" content="<?= $assetURL(['id' => $page->getFeatureImageId(), 'width' => 200]) ?>">
-        <?php endif ?>
-
-        <?php if ($page->allowsExternalIndexing()): ?>
-            <meta name='robots' content='index, follow' />
-        <?php else: ?>
-            <meta name='robots' content='noindex, nofollow' />
-        <?php endif ?>
+        <link href="<?= $pub('main.css') ?>" rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
         <?php if (isset($album)): ?>
             <link href="/vendor/boomcms/themes/demo/album.css" rel='stylesheet' type='text/css' />
         <?php endif ?>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <?= meta_description() ?>
+        <?= meta_keywords() ?>
+        <?= meta_og() ?>
+        <?= meta_robots() ?>
+        <?= $analytics() ?>
     </head>
 
     <body <?php if (Editor::isEnabled()): ?> class="edit-mode"<?php endif ?>>
         <header>
             <nav id="navbar" class="container">
                 <div class="navbar-header">
-                    <?php if(isset($logo) && $logo == true) :?>
+                    <?php if (isset($logo) && $logo == true) :?>
                         <a id="logo" href="/">
                             <?= $chunk('asset', 'logo')->template('logo') ?>
                         </a>

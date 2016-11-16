@@ -8,7 +8,7 @@
         
         <h1 id="b-page-title"><?= $page->getTitle() ?></h1>
         <?= $chunk('text', 'standfirst') ?>
-        <?= $chunk('text', 'bodycopy')->setHtml('<div class="text">{text}</div>') ?>
+        <?= $chunk('text', 'bodycopy') ?>
     </section>
 
     <section class="album-list">
