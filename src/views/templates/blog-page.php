@@ -24,7 +24,6 @@
         </time>
 
         <?= $chunk('text', 'bodycopy') ?>
-        <?= $chunk('asset', 'cta')->template('cta')->setPlaceHolderText('Insert Call to Action') ?>
     </section>
 
     <?= $view('inc.related-pages', [
