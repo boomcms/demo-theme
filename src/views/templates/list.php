@@ -7,16 +7,15 @@
         <?= $chunk('text', 'bodycopy') ?>
     </section>
 
-        <?= $view('inc.child-pages', [
-            'pages' => $getPages([
-                'parent' => $page,
-                'visibleinnavigation' => true,
-            ]),
-            'class'      => 'blog-child-pages',
-            'show_title' => false,
-            'cols'       => 3,
-            'dates'      => false,
-        ]) ?>
+    <?= $view('inc.child-pages', [
+        'pages' => $getPages([
+            'parent' => $page,
+        ]),
+        'class'      => 'blog-child-pages',
+        'show_title' => false,
+        'cols'       => 3,
+        'dates'      => false,
+    ]) ?>
 </article>
 
 <?= $view('inc.footer') ?>
