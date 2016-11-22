@@ -1,10 +1,6 @@
 <?php $homepage = $page->isRoot() ? $page : Page::findByPrimaryUri('/') ?>
 
 <ul id="topnav" class="main-menu sm sm-simple">
-    <li <?php if ($page->is($homepage)): ?> class="active"<?php endif ?>>
-        <a href="/">Home</a>
-    </li>
-
     <?php foreach ($getPages(['parent' => $homepage, 'visibleinnavigation' => true]) as $child): ?>
         <?php $subpages = $getPages(['parent' => $child, 'visibleinnavigation' => true]) ?>
 
@@ -13,7 +9,7 @@
                 <?= $child->getTitle() ?>
             </a>
 
-            <?php if (!empty($subpages)): ?>
+            <?php if (count($subpages)): ?>
                 <ul class="sub-menu">
                     <?php foreach ($subpages as $p): ?>
                         <li id="menu-item-<?= $p->getId() ?>" <?php if ($p->is($page)): ?> class="active"<?php endif ?>>
