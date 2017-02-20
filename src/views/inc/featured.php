@@ -20,5 +20,5 @@
 ?>
 <ul <?php if(isset($class)) :?> class="featured <?= $class ?> <?= $item_template ?> <?= $cols ?>"<?php endif ?>>
     <?php for ($i = 1; $i <= $items; $i++): ?>
-    	<li><?= $chunk('feature', "features-$i")->template($item_template) ?></li><?php endfor ?>
+    	<li><?= $chunk('linkset', "features-$i")->feature()->template($item_template) ?></li><?php endfor ?>
 </ul>
