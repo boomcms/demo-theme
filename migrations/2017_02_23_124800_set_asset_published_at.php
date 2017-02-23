@@ -26,8 +26,8 @@ class SetAssetPublishedAt extends Migration
                     $asset->setDescription($info->getDescription());
                 }
 
-                if (empty($asset->getCopyright())) {
-                    $asset->setCredits($info->getCredits());
+                if (empty($asset->getCredits())) {
+                    $asset->setCredits($info->getCopyright());
                 }
 
                 $created = $info->getCreatedAt();
