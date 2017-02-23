@@ -3,7 +3,6 @@
 use BoomCMS\Database\Models\Asset;
 use BoomCMS\FileInfo\Facade as FileInfo;
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Symfony\Component\HttpFoundation\File\File;
 
 class SetAssetPublishedAt extends Migration
@@ -27,7 +26,7 @@ class SetAssetPublishedAt extends Migration
                     $asset->setDescription($info->getDescription());
                 }
 
-                if (empty($asset->getCredits())) {
+                if (empty($asset->getCopyright())) {
                     $asset->setCredits($info->getCredits());
                 }
 
