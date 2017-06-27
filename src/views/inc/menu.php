@@ -1,4 +1,4 @@
-<?php $homepage = $page->isRoot() ? $page : Page::findByPrimaryUri('/') ?>
+<?php $homepage = $page->isRoot() ? $page : Page::findByPrimaryUri('') ?>
 
 <ul id="topnav" class="main-menu sm sm-simple">
     <?php foreach ($getPages(['parent' => $homepage, 'visibleinnavigation' => true]) as $child): ?>
