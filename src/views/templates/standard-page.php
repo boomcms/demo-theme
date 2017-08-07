@@ -14,6 +14,7 @@
         <h1 id="b-page-title"><?= $page->getTitle() ?></h1>
         <?= $chunk('text', 'standfirst') ?>
         <?= $chunk('text', 'bodycopy') ?>
+        <?= $chunk('text', 'text')->setHtml('<p>{text}</p>') ?>
         <?= $chunk('asset', 'cta')->template('cta')->setPlaceHolderText('Insert Call to Action') ?>
     </section>
 </article>

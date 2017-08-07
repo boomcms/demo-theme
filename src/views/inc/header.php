@@ -29,7 +29,7 @@
                             <?= $chunk('asset', 'logo')->template('logo') ?>
                         </a>
                     <?php else: ?>
-                        <?php $home_page = Page::findByUri('/') ?>
+                        <?php $home_page = Page::findByUri('') ?>
                         <a id="logo" href="/"><?= $chunk('asset', 'logo', $home_page)->template('logo') ?></a>
                     <?php endif ?>
                 </div>
