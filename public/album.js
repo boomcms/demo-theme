@@ -11487,7 +11487,7 @@ $(document).ready(function() {
 			var $this = $(this),
 				width = Math.ceil($this.width() / 100) * 100,
 				height = Math.ceil($this.height() / 100) * 100,
-				url = '/asset/' + $this.attr('data-asset') + '/crop/' + width + '/' + height;
+				url = '/asset/' + $this.attr('data-asset') + '/view/' + width;
 
 			if (parseInt($this.attr('data-asset')) > 0) {
 				if (typeof($this.attr('data-width')) === 'undefined' || width > parseInt($this.attr('data-width')) + 20) {
