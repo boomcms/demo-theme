@@ -1,51 +1,46 @@
 .album-list {
-	.album-images {
-		.album-item {
-			position: relative;
+    .album-images {
+        .album-item {
+            position: relative;
 
-			img {
-				width: 100%;
-				max-width: 100%;
-				height: auto;
-			}
-		}
-	}
+            img {
+                width: 100%;
+                max-width: 100%;
+                height: auto;
+                max-height: 400px;
+            }
+        }
+    }
 
-	.slideshow-list ul li a {
-		height: auto;
-	}
+    .slideshow-list ul li a {
+        height: auto;
+    }
 
-	.credits {
-		padding: 1rem;
-		position: absolute;
-		right: 1rem;
-		top: 1rem;
-		z-index: 3;
-		color: @white;
-	}
+    .credits {
+        padding: 1rem;
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        z-index: 3;
+        color: @white;
+    }
 
-	.child-cols-3 .slides-2{
-		.cols(2);
-	}
-	.child-cols-3 .slides-1{
-		max-height: @slideshow_height+10rem;
-		overflow: hidden;
+    .child-cols-3 .slides-2 {
+        .cols(2);
+    }
 
-		>li {
-			padding: 0;
-		}
+    .child-cols-3 .slides-1 {
+        .cols(1);
+        max-height: @slideshow_height+10rem;
+        overflow: hidden;
 
-		img {
-			position: relative;
-			top: 0;
-		}
+        > li {
+            padding: 0;
+        }
 
-		.cols(1);
-	}
+        img {
+            position: relative;
+            top: 0;
+        }
+    }
 }
-
-@media all and (min-width: (@large_width  + @scroll_bar)) {
-.album-list .child-cols-3 .slides-1 img {
-		
-	}
-	}

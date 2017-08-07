@@ -3,26 +3,26 @@
 }
 
 .container {
-        width: 100%;
-        margin: 0 auto;
-        padding: 0 15px;
-        .clear(both); 
-    }
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+    .clear(both); 
+}
 
 /*  creating dynamically .col-1 to .col-5 */  
 .for(1, 6, {.callback(@i) {
     .cols-@{i} {
             .cols(@i);
-            > * {
+                > * {
             }
         }
     }});
 
 /* .col-6 > elements */
-.cols-6{
+.cols-6 {
     .cols(6);
-
 }
+
 .child-cols-3 {
     overflow: hidden;
 }
@@ -70,8 +70,6 @@
         padding-left: 0;
         padding-right: 0;
     }
-
-
 }
 
 @media all and (min-width: (@medium_width + @scroll_bar)) {
@@ -82,6 +80,6 @@
 
 @media all and (min-width: (@large_width  + @scroll_bar)) {
     .container {
-        width: @large_width ;
+        width: @large_width;
     }
 }
