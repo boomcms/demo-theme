@@ -1,6 +1,15 @@
-BoomCMS Default Theme
+BoomCMS Demo Theme
 =========
 
-This is the default BoomCMS theme which is distributed with the [BoomCMS bootstrap app](http://www.github.com/boomcms/boomcms).
+This is the BoomCMS demo theme, used on the [BoomCMS Demo site](https://demo.boomcms.net).
 
-This theme is intended as a quick demo to new users of what BoomCMS can do and as an example to developers of how to create BoomCMS themes.
+### Customisation
+
+Feel free to customise this theme as much you want to suit your own needs. To build the JavaScript and CSS files first install dependencies:
+
+```
+npm install
+bower install
+```
+
+Then run `grunt build`
