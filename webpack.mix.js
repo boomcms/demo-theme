@@ -1,0 +1,32 @@
+let mix = require('laravel-mix');
+
+/*
+ |--------------------------------------------------------------------------
+ | Mix Asset Management
+ |--------------------------------------------------------------------------
+ |
+ | Mix provides a clean, fluent API for defining some Webpack build steps
+ | for your Laravel application. By default, we are compiling the Sass
+ | file for your application, as well as bundling up your JS files.
+ |
+ */
+
+mix.scripts([
+    'bower_components/jquery/dist/jquery.js',
+    'bower_components/modernizr/modernizr.js',
+    'bower_components/flexslider/jquery.flexslider.js',
+    'bower_components/smartmenus/dist/jquery.smartmenus.js',
+    'bower_components/lightgallery/dist/js/lightgallery.min.js',
+    'bower_components/smartmenus/dist/jquery.smartmenus.js',
+    'src/js/resizeImages.js',
+    'src/js/slideshow.js', 
+    'src/js/main.js'
+], 'public/main.js')
+    .less('src/css/main.less', 'public/main.css')
+    .styles([
+        'bower_components/smartmenus/dist/css/sm-core-css.css',
+        'bower_components/smartmenus/dist/css/sm-simple/sm-simple.css',
+        'bower_components/lightgallery/dist/css/lightgallery.css',
+        'public/main.css'
+    ], 'public/main.css')
+    .sourceMaps();
