@@ -1,16 +1,9 @@
-.child-pages-wrapper  {
-	overflow: hidden;
-}
-
 .child-pages {
-	margin: -1rem;
-
-    ul {
-        margin: 0;
-    }
+    margin: -0.5rem;
+    overflow: hidden;
 
     li {
-        padding: 1rem;
+        padding: 0.5rem;
 
         a {
             .listItemAnchor;
@@ -18,7 +11,7 @@
             height: 30rem;
             width: 100%;
             display: block;
-            background: @blue;
+            background: @orange;
 
             time {
                 padding: 0 2rem;
@@ -26,6 +19,16 @@
                 display: block;
                 color: @white;
             }
+        }
+    }
+}
+
+@media all and (min-width: 600px) {
+    .child-pages {
+        li {
+            display: inline-block;
+            float: left;
+            width: 50%;
         }
     }
 }

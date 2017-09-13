@@ -22,11 +22,11 @@ mix.scripts([
     'src/js/slideshow.js', 
     'src/js/main.js'
 ], 'public/main.js')
-    .less('src/css/main.less', 'public/main.css')
+    .less('src/css/main.less', 'src/main.css')
     .styles([
         'bower_components/smartmenus/dist/css/sm-core-css.css',
         'bower_components/smartmenus/dist/css/sm-simple/sm-simple.css',
         'bower_components/lightgallery/dist/css/lightgallery.css',
-        'public/main.css'
+        'src/main.css'
     ], 'public/main.css')
     .sourceMaps();

@@ -1,4 +1,4 @@
-<?= $view('inc.header', ['album' => true]) ?>
+<?= $view('inc.header') ?>
 
 <article id="main" role="main">
     <section id="content" class="container">

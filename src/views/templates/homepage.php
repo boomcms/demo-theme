@@ -1,4 +1,4 @@
-<?= $view('inc.header', ['logo' => true]) ?>
+<?= $view('inc.header') ?>
 
 <article id="main" role="main">
     <?= $view('inc.slideshow') ?> 

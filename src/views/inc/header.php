@@ -4,12 +4,8 @@
         <title><?= $page->getTitle() ?> | <?= Settings::get('site.name') ?></title>
 
         <link href="<?= $pub('main.css') ?>" rel='stylesheet' type='text/css'>
-        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
-        <?php if (isset($album)): ?>
-            <link href="/vendor/boomcms/themes/demo/album.css" rel='stylesheet' type='text/css' />
-        <?php endif ?>
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -24,13 +20,13 @@
         <header>
             <nav id="navbar" class="container">
                 <div class="navbar-header">
-                    <?php if (isset($logo) && $logo == true) :?>
+                    <?php if ($page->isRoot()) :?>
                         <a id="logo" href="/">
                             <?= $chunk('asset', 'logo')->template('logo') ?>
                         </a>
                     <?php else: ?>
-                        <?php $home_page = Page::findByUri('') ?>
-                        <a id="logo" href="/"><?= $chunk('asset', 'logo', $home_page)->template('logo') ?></a>
+                        <?php $homePage = Page::findByUri('') ?>
+                        <a id="logo" href="/"><?= $chunk('asset', 'logo', $homePage)->template('logo') ?></a>
                     <?php endif ?>
                 </div>
 

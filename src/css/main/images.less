@@ -1,30 +1,29 @@
 .overlay {
-	background-color: fade(@black, 50%);
-	background-blend-mode: multiply;
-	.fullContain
+    background-color: fade(@black, 50%);
+    background-blend-mode: multiply;
+    .fullContain
 }
 .image {	
-	display: block;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: 50%;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
 }
 
-		
-.bgimage {
-	.image;
-	.fullContain;
 
+.bgimage {
+    .image;
+    .fullContain;
 }
 
 .opacity .bgimage {
-	opacity: 0;
-	transition: opacity .4s; 
+    opacity: 0;
+    transition: opacity .4s; 
 }
 
 .opacity .bg-loaded .bgimage,
 .opacity .bg-not-there .bgimage,
 .opacity .bg-not-linked .bgimage
 {
-	opacity: 1;
+    opacity: 1;
 }
