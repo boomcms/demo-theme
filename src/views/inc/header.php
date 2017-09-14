@@ -4,7 +4,7 @@
         <title><?= $page->getTitle() ?> | <?= Settings::get('site.name') ?></title>
 
         <link href="<?= $pub('main.css') ?>" rel='stylesheet' type='text/css'>
-        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,900" rel="stylesheet">
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,18 +16,15 @@
         <?= $analytics() ?>
     </head>
 
-    <body <?php if (Editor::isEnabled()): ?> class="edit-mode"<?php endif ?>>
+    <body id="<?= $page->getTemplate()->getFilename() ?>">
         <header>
+            <?= $view('inc.sibling-nav') ?>
+
             <nav id="navbar" class="container">
                 <div class="navbar-header">
-                    <?php if ($page->isRoot()) :?>
-                        <a id="logo" href="/">
-                            <?= $chunk('asset', 'logo')->template('logo') ?>
-                        </a>
-                    <?php else: ?>
-                        <?php $homePage = Page::findByUri('') ?>
-                        <a id="logo" href="/"><?= $chunk('asset', 'logo', $homePage)->template('logo') ?></a>
-                    <?php endif ?>
+                    <?php $home = $page->isRoot() ? $page : Page::findByUri('') ?>
+
+                    <a id="logo" href="/"><?= $chunk('asset', 'logo', $home)->template('logo') ?></a>
                 </div>
 
                 <div class="nav-container">
@@ -42,4 +39,4 @@
             </nav>
         </header>
 
-        <main id="wrapper">
+        <main>

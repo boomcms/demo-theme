@@ -9,7 +9,6 @@
 
                     <div class="description">
                         <h3><?= $p->getTitle() ?></h3>
-                        <p><?= $chunk('text', 'standfirst', $p)->text() ?></p>
 
                         <?php if ((!isset($dates) || $dates === true)): ?>
                             <time datetime="<?= $p->getVisibleFrom()->format('w3c') ?>" pubdate>

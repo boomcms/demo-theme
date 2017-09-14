@@ -1,0 +1,45 @@
+.album-images {
+    margin: 5rem 0 0 0;
+
+    ul {
+        margin: -0.5rem;
+        overflow: hidden;
+        padding: 0;
+
+        li {
+            display: inline-block;
+            float: left;
+            padding: 0.5rem;
+
+            @media all and (min-width: 600px) {
+                width: 50%;
+            }
+
+            @media all and (min-width: 767px) {
+                width: 100/3%;
+            }
+        }
+    }
+
+    a {
+        position: relative;
+        display: block;
+        height: 40rem;
+
+        img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            max-height: 100%;
+        }
+    }
+
+    .credits {
+        padding: 1rem;
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        z-index: 3;
+        color: @white;
+    }
+}

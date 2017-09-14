@@ -6,7 +6,6 @@ body {
     .text-normal;
     margin: 0;
     overflow-x: hidden;
-    font-weight: 300;
 
     * {
         box-sizing: border-box;
@@ -17,7 +16,7 @@ body {
 h1 {
     .text-title;
     color: @black;
-    margin: 0 0 7rem 0;
+    margin: 0;
 }
 
 a {
@@ -41,4 +40,16 @@ blockquote {
         left: 0;
         font-size: 3rem;
     }
+}
+
+.description {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    padding: 0 3rem;
+    color: fade(@white, 85);
+    opacity: 0;
+    transition: opacity 0.5s;
+    z-index: 2;
 }

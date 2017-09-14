@@ -1,110 +1,106 @@
-#banner_container {
-    a.default {
-		display: block;
-		line-height: 10rem;
-		font-size: 3rem;
-		width: 100%;
-	}
+#slideshow  {
+    width: 100%;
+    height: calc(~"100vh - 50px");
+    overflow: hidden;
+    padding: 0;
+    margin: 0 0 5rem 0;
+    position: relative;
+    z-index: 1;
 
-	#banner{
-		height: 50rem;
-		padding: 0;
-        margin: 0 0 5rem 0;
+    .bgimage {
+        background-position: 50% 50%;
+        background-size: cover;
+    }
+
+    .slides  {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+
+        > li  {
+            width: 100%;
+            height: 100%;
+
+            a {
+                color: @white;
+                display: block;
+                position: relative;
+                height: 100%;
+                width: 100%;
+
+                &:hover {
+                    color: lighten(@orange, 30%);
+                }
+            }
+
+            .flex-caption  {
+                position: absolute;
+                bottom: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 100%;
+                height: auto;
+                z-index: 3;
+                text-align: center;
+
+                .container {
+                    padding: 1rem;
+                }
+
+                h2, p {
+                    color: fade(@white, 70);
+                }
+
+                h2 {
+                    font-weight: 900;
+                    font-size: 8rem;
+                    line-height: 6.4rem;
+                    margin: 0 0 2rem 0;
+                }
+
+                p {
+                    font-weight: 500;
+                    font-size: 5rem;
+                    line-height: 4.2rem;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+
+    .flex-navigation .container {
         position: relative;
-        z-index: 1;
+    }
 
-		#slideshow  {
-			width: 100%;
-			height: 100%;
-			overflow: hidden;
+    .flex-control-paging {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 0;
+        z-index: 999;
+        margin: 0 -0.5rem;
 
-			.bgimage {
-				background-position: 50% 50%;
-				background-size: cover;
-			}
+        li {
+            display: inline-block;
+            vertical-align: bottom;
+            padding: 0 0.5rem;
 
-			.slides  {
-				width: 100%;
-				height: 100%;
-				margin: 0;
-				padding: 0;
+            a {
+                width: 5px;
+                height: 3rem;
+                background: @white;
+                display: block;
 
-				> li  {
-					width: 100%;
-					height: 100%;
+                &:hover {
+                    background: @orange;
+                }
 
-					.flex-caption  {
-						position: absolute;
-						bottom: 0;
-						width: 100%;
-						height: auto;
-						text-align: left;
-						z-index: 3;
-						
-						.container {
-							padding: 1rem;
-						}
-
-						h3, p {
-							color: @white;
-						}
-
-                        h3 {
-                            margin: 0 0 2.5rem 0;
-                        }
-
-                        p {
-                            margin: 0 0 5rem 0;
-                        }
-
-						a {
-							color: @white;
-
-							&:hover {
-								color: lighten(@orange, 30%);
-							}
-						}
-					}
-				}
-			}
-
-			.flex-navigation .container {
-				position: relative;
-			}
-
-			.flex-control-paging {
-				position: absolute;
-				bottom: 1.5rem;
-				left: 50%;
-                transform: translateX(-50%);
-				padding: 0;
-				z-index: 999;
-
-				li {
-					display: inline-block;
-
-					a {
-						border: 1px solid @dark-grey;
-						width: 3rem;
-						height: 3rem;
-						display: block;
-
-						&:hover {
-							background: @dark-grey;
-						}
-
-                        &.flex-active {
-                            background: @dark-grey;
-                        }
-					}
-				}
-			}
-		}
-	}
-}
-
-@media all and (min-width: (@large_width + @scroll_bar)) {
-#banner_container #banner {
-		height: @slideshow_height+10rem;
-	}
+                &.flex-active {
+                    background: transparent;
+                }
+            }
+        }
+    }
 }

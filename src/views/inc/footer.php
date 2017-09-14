@@ -1,17 +1,13 @@
         </main>
-
-        <?php $home = $getPages(['template' => Template::findByThemeAndFilename('demo', 'homepage')]) ?>
+        
+        <?php $home = $page->isRoot() ? $page : Page::findByPrimaryUri('') ?>
 
         <footer id="footer">
             <div class="copy container">
-				<?= $chunk('text', 'footer', $home->first())->text() ?>
+				<?= $chunk('text', 'footer', $home)->setPlaceHolderText('Insert website footer text') ?>
             </div>
         </footer>
 
-        <?php if (!isset($album)): ?>
-            <?= $view('inc.main-scripts') ?>
-        <?php else : ?>
-            <?= $view('inc.album-scripts') ?>
-        <?php endif ?>
+        <script type="text/javascript" async src="<?= $pub('main.js') ?>"></script>
     </body>
 </html>   

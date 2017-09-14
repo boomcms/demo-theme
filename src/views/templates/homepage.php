@@ -55,4 +55,5 @@
     </div>
 </article>
 
-<?= $view('inc.footer-homepage') ?>
+<?= $view('inc.footer') ?>
+
