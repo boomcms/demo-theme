@@ -1,59 +1,23 @@
 <?= $view('inc.header') ?>
+<?= $chunk('slideshow', 'slideshow')->template('slideshow') ?>
+<?= $view('inc.page-content') ?>
+<?= $chunk('slideshow', 'collectionlist')->template('album-slideshow') ?>
 
-<article id="main" role="main">
-    <?= $view('inc.slideshow') ?> 
+<div class="container">
+    <?= $chunk('text', 'bodycopy2')->setHtml('<div class="content">{text}</div>') ?>
+</div>
 
-    <section id="content" class="container">
-        <h1 id="b-page-title"><?= $page->getTitle() ?></h1>
-        <?= $chunk('text', 'standfirst') ?>
-        <?= $chunk('text', 'bodycopy') ?>
-    </section>
+<?= $chunk('linkset', 'page-list1')->template('page-list') ?>
 
-    <section id="featured">
-        <?= $view('inc.featured',[
-            'show_title' => false,
-            'items' => 6,
-            'item_template' => 'with-image',
-            'class' => 'homepage-featured',
-            'cols'  => 3
-        ]) ?>
-    </section>
+<div class="container">
+    <?= $chunk('text', 'bodycopy3')->setHtml('<div class="content">{text}</div>') ?>
+</div>
 
-    <section class="featured-collection container">
-        <?= $view('inc.asset-collection',[
-             'items' => 1,
-             'cols' => 1,
-             'class' => 'showcase-collection',
-             'chunk_name' => 'collection',
-             'item_template' => '',
-             'placeholder_text' => 'Insert a Collection'
-        ]) ?>
-    </section>
+<?= $chunk('slideshow', 'collectionlist2')->template('album-slideshow') ?>
 
-    <section class="collection-list container">
-        <?= $view('inc.slideshow-list', [
-            'class' => 'home-collection-list',
-            'show_title' => true,
-            'cols' => 3
-        ]) ?>
-    </section>
+<div class="container">
+    <?= $chunk('text', 'bodycopy4')->setHtml('<div class="content">{text}</div>') ?>
+</div>
 
-    <section class="featured-collection container">
-        <?= $view('inc.asset-collection',[
-             'items' => 1,
-             'cols' => 1,
-             'class' => 'showcase-collection2',
-             'chunk_name' => 'collection_2', //must not colide with other instances
-             'item_template' => '',
-             'placeholder_text' => 'Insert a Collection'
-        ]) ?>
-    </section>
-
-    <div class="container">
-        <?= $chunk('text', 'standfirst2')->setPlaceholderText('Insert title')->setHtml('<h3>{text}</h3>') ?>
-        <?= $chunk('text', 'bodycopy2')->setHtml('<div class="content">{text}</div>') ?>
-    </div>
-</article>
-
+<?= $chunk('linkset', 'page-list2')->template('page-list') ?>
 <?= $view('inc.footer') ?>
-

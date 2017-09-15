@@ -1,5 +1,5 @@
 <?php if (count($pages)): ?>
-    <ul class="child-pages">
+    <ul class="page-list">
         <?php foreach ($pages as $p): ?>                    
             <li>
                 <a href="<?= $p->url() ?>"> 

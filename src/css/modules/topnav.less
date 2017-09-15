@@ -1,13 +1,23 @@
 #navbar {
     #topnav {
-        background: none;
-        box-shadow: none;
         border: 0;
         z-index: 999;
         margin: 0 2rem 0 0;
+        overflow: hidden;
 
-        > li > ul  {
-            border: 0;
+        li {
+            display: inline-block;
+            float: left;
+            
+            &.active > a {
+                color: @orange;
+                font-weight: bold;
+                background-color: lighten(@orange, 70%);
+            }
+
+            + li {
+                border-left: 1px solid @light-grey;
+            }
         }
 
         a {
@@ -15,22 +25,12 @@
             line-height: 50px;
             padding: 0 2rem;
             font-weight: 300;
+            height: 50px;
+            display: block;
 
-            &.has-submenu {
-                padding-right: 4rem;
+            &:hover, &:focus {
+                background: @orange;
             }
-        }
-
-        li.active > a {
-            color: @orange;
-            font-weight: bold;
-            background-color: lighten(@orange, 70%);
-        }
-
-        > li > a.current {
-            color: @orange;
-            font-weight: bold;
-            background-color: lighten(@orange, 50%);
         }
     }
 
@@ -130,10 +130,6 @@
             list-style: none;
             padding: 0;
             float: right;
-
-            li a span.sub-arrow:before {
-                content: "\2026";
-            }
         }
     }
 }

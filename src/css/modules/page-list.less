@@ -1,36 +1,60 @@
 .page-list {
-	h2 {
-		margin-bottom: 5rem;
-	}
+    margin: -0.5rem;
+    overflow: hidden;
+    padding: 0;
 
-	ul {
-		margin-top: -3rem;
-	}
+    li {
+        padding: 0.5rem;
 
-	li {
-		a {
-			background: #fff;
-			border: 1px solid #222;
-			padding: 1.5rem;
-			display: block;
-			color: #222;
+        a {
+            position: relative;
+            height: 30rem;
+            width: 100%;
+            display: block;
+            background: @orange;
 
-			&:hover, &:focus {
-				text-decoration: none;
+            &:hover, &:focus {
+                &:before, .description {
+                    opacity: 1;
+                    transition: opacity 0.5s;
+                }
+            }
 
-				h3 {
-					text-decoration: underline;
-				}
-			}
-		}
+            &:before {
+                background: fade(@black, 70);
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 1;
+                content: ' ';
+                opacity: 0;
+                transition: opacity 0.5s;
+            }
 
-		h3 {
-			min-height: 3em;
-			color: #bf1e2e;
-		}
+            h3 {
+                text-transform: uppercase;
+                font-size: 3rem;
+                line-height: 3rem;
+                font-weight: 500;
+                margin: 0 0 1rem 0;
+            }
 
-		p {
-			min-height: 6em;
-		}
-	}
+            time {
+                margin: 0;
+                display: block;
+            }
+        }
+    }
+}
+
+@media all and (min-width: 600px) {
+    .page-list {
+        li {
+            display: inline-block;
+            float: left;
+            width: 50%;
+        }
+    }
 }

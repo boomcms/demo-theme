@@ -1,9 +1,14 @@
 <?= $view('inc.header') ?>
+<?= $chunk('asset', 'banner')->template('banner') ?>
+<?= $view('inc.page-content', ['time' => true]) ?>
 
-<article role="main" class="container">
-    <h1 id="b-page-title"><?= $page->getTitle() ?></h1>
-    <?= $chunk('text', 'standfirst') ?>
-    <?= $chunk('text', 'bodycopy') ?>
-</article>
+<?= $view('inc.page-list', [
+    'pages' => $getPages([
+        'parent'              => $page->getParent(),
+        'visibleinnavigation' => true,
+        'limit'               => 8,
+    ]),
+    'dates' => true,
+]) ?>
 
 <?= $view('inc.footer') ?>

@@ -15,7 +15,6 @@ mix.scripts([
     'bower_components/jquery/dist/jquery.js',
     'bower_components/modernizr/modernizr.js',
     'bower_components/flexslider/jquery.flexslider.js',
-    'bower_components/smartmenus/dist/jquery.smartmenus.js',
     'bower_components/lightgallery/dist/js/lightgallery.min.js',
     'bower_components/smartmenus/dist/jquery.smartmenus.js',
     'src/js/resizeImages.js',
@@ -24,8 +23,6 @@ mix.scripts([
 ], 'public/main.js')
     .less('src/css/main.less', 'src/main.css')
     .styles([
-        'bower_components/smartmenus/dist/css/sm-core-css.css',
-        'bower_components/smartmenus/dist/css/sm-simple/sm-simple.css',
         'bower_components/lightgallery/dist/css/lightgallery.css',
         'src/main.css'
     ], 'public/main.css')

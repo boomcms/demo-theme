@@ -1,4 +1,4 @@
-<div id="album-slideshow">
+<div class="album-slideshow">
     <ul>
         <?php foreach ($slides as $slide): ?>
             <li class="slide-title slide-caption" >

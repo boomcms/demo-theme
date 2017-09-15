@@ -18,9 +18,11 @@
 
     <body id="<?= $page->getTemplate()->getFilename() ?>">
         <header>
-            <?= $view('inc.sibling-nav') ?>
+            <nav id="navbar" class="container"> 
+                <?php if (!$page->isRoot()): ?>
+                    <?= $view('inc.sibling-nav') ?>
+                <?php endif ?>
 
-            <nav id="navbar" class="container">
                 <div class="navbar-header">
                     <?php $home = $page->isRoot() ? $page : Page::findByUri('') ?>
 
@@ -31,10 +33,23 @@
                     <input id="main-menu-state" type="checkbox" />
 
                     <label class="main-menu-btn" for="main-menu-state">
-                        <span class="main-menu-btn-icon"></span> <span class="main-menu-btn-text">Toggle main menu visibility</span> <span class="main-menu-btn-title" aria-hidden="true"><span aria-hidden="true" data-icon="h"></span></span>
+                        <span class="main-menu-btn-icon"></span>
+                        <span class="main-menu-btn-text">Toggle main menu visibility</span>
+
+                        <span class="main-menu-btn-title" aria-hidden="true">
+                            <span aria-hidden="true" data-icon="h"></span>
+                        </span>
                     </label>
 
-                    <?= $view('inc.menu', ['child_items' => true]) ?>
+                    <ul id="topnav" class="main-menu">
+                        <?php foreach ($getPages(['parent' => $home, 'visibleinnavigation' => true]) as $child): ?>
+                            <li<?php if ($child->is($page)): ?> class="active"<?php endif ?>>
+                                <a href="<?= $child->url() ?>">
+                                    <?= $child->getTitle() ?>
+                                </a>
+                            </li>
+                       <?php endforeach ?>
+                    </ul>
                 </div>
             </nav>
         </header>

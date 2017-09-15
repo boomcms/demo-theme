@@ -13969,38 +13969,17 @@ $(document).ready(function() {
 });
 (function($) {
  	var $bannerSlideshow = $('#slideshow');
- 	var $carousels = $('.carousel-list');
 
 	function bannerSlideshow() {
 		$bannerSlideshow.flexslider({
 			slideshow: false,
 			controlNav: true,
-			manualControls:$bannerSlideshow.find('.flex-control-paging li a'),
+			manualControls: $bannerSlideshow.find('.flex-control-paging li a'),
 			directionNav: false
 		});
 	};
 
-
-	function makeCarousels() {
-		if($carousels.length>0)  {
-			$carousels.each(function(key, val) {
-				// console.log('init carousel ' + key);
-				$(val).flexslider({
-			      animation: "slide",
-			      animationLoop: false,
-			      itemWidth: 300,
-			      itemMargin: 5,
-			      minItems: 1,
-			      directionNav: false,
-			      maxItems: 3
-			  });
-			});
-		}
-	};
-
-	makeCarousels();
 	bannerSlideshow();
-
 
 	$(document).on('boomcms:chunkload', function(e) {
 		if (e.chunk.type === 'slideshow') {
@@ -14009,74 +13988,58 @@ $(document).ready(function() {
 			bannerSlideshow();
 		}
 	});
-
-	$bannerSlideshow.on('click', '.prev', function(e) {
-		e.preventDefault();
- 
-		$bannerSlideshow.flexslider('prev');
-	});
-
-	$bannerSlideshow.on('click', '.next', function(e) {
-		e.preventDefault();
-
-		$bannerSlideshow.flexslider('next');
-	});
-
-
 }(jQuery));
 (function() {
 	var $body = $('body'),
+        $window = $(window),
         v_height = 200,
         v_padding = 80,
         v_scroll = 0;
 
-	$(window)
-	.on('scroll', function()  {
-		v_scroll = $(window).scrollTop();
-		if(v_scroll + v_padding > v_height) {
-			$body.css({
-				paddingTop: $body.find('#navbar').height()
-			}).addClass('nav-fixed');
-		}
-		else {
-			$body.removeClass('nav-fixed').css({
-				paddingTop: 0
-			})
-		}
-	})
+	$window
+        .on('scroll', function()  {
+            v_scroll = $window.scrollTop();
 
-	/*
-	body togglers events
-	 */
-	
-	if($('#sidebar').length) {
-		var $sidebar_nav = $('#sidebar');
-		$body
-		.on('click', '#sidebar_nav_open', function() {
-			$body.addClass('sidebar-open');
-		})
-		.on('click', '#sidebar_nav_close', function() {
-			$body.removeClass('sidebar-open');
-		});
-	}
-	/*
-	Mobile view menu adjustments
-	 */
+            if (v_scroll + v_padding > v_height) {
+                $body
+                    .css({
+                        paddingTop: $body.find('#navbar').height()
+                    })
+                    .addClass('nav-fixed');
+            } else {
+                $body
+                    .removeClass('nav-fixed')
+                     d.css({
+                        paddingTop: 0
+                    });
+            }
+        });
+
+	$body
+        .on('click', '#sidebar_nav_open', function() {
+            $body.addClass('sidebar-open');
+        })
+        .on('click', '#sidebar_nav_close', function() {
+            $body.removeClass('sidebar-open');
+        });
+
+    $(".album-images ul").lightGallery({
+        selector: 'a',
+        hideControlOnEnd: true,
+        subHtmlSelectorRelative: true,
+        download: false
+    });
 	
 	// init resp menu scripts
 	var $topnav = $('#topnav');
-	 $topnav.smartmenus({ 
-	 	markCurrentItem: true,
-	 	markCurrentTree: true,
-	 	keepHighlighted: true
-	 });
-	 	$body.on('click', 'label.main-menu-btn', function() {
-			if($('#main-menu-state').is(':checked')) {
-				$body.removeClass('mobile-menu-open');
-			} else {
-				$body.addClass('mobile-menu-open');
-			}
-		});
+
+    $body.on('click', 'label.main-menu-btn', function() {
+        if($('#main-menu-state').is(':checked')) {
+            $body.removeClass('mobile-menu-open');
+        } else {
+            $body.addClass('mobile-menu-open');
+        }
+    });
 		// add menu show hide toggle button on mobile
 	var $mainMenuState = $('#main-menu-state');
 	if ($mainMenuState.length) {

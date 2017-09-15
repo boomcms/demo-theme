@@ -1,37 +1,33 @@
-.content {
+.content, .content.mce-content-body {
+    max-width: 60rem;
+    font-weight: 300;
+    font-size: 2rem;
+    line-height: 3rem;
+    color: @dark-grey;
+
     > * + * {
         margin-top: 1.5rem;
     }
 
-    * {
-        max-width: 800px;
-    }
-
     h2 {
-        color: @orange;
-        margin-top: 2rem;
-        font-weight: 600;
+        font-size: 2.4rem;
+        line-height: 3rem;
+        color: @dark-grey;
+        font-weight: 400;
     }
 
     h3 {
-       color: @dark-grey;
-       font-weight: 600;
-       font-size: 2rem;
-       line-height: 1.6em;
-    }
-
-    .date {
-        margin-bottom: 2rem;
+        font-weight: 400;
     }
 
     img  {
         max-width: 100%;
-        width: auto;
         height: auto;
     }
 
     a {
         color: @orange;
+        font-weight: 600;
         text-decoration: none;
 
         &:hover, &:focus {
@@ -39,22 +35,21 @@
         }
     }
 
-    p.cta:last-child a, > a.cta:last-child {
-        margin-bottom: 0;
+    blockquote {
+        color: @orange;
+        font-size: 2.4rem;
+        line-height: 3rem;
+        font-weight: 400;
     }
 
     p.cta a, a.cta {
         display: block;
-        text-transform: uppercase;
         padding: 1rem;
         text-align: center;
-        margin: 5rem 0;
-        background: @beige;
-        color: @dark-grey;
-
-        &:last-child {
-            margin-bottom: 0;
-        }
+        margin: 2rem 0;
+        color: @black;
+        border: 1px solid @orange;
+        border-radius: 3px;
 
         &[href*="github.com"] {
             &:before {
@@ -70,6 +65,7 @@
         &:hover, &:focus {
             text-decoration: none;
             background: @orange;
+            color: @beige;
         }
     }
 }

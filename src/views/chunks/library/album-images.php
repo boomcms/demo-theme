@@ -3,7 +3,7 @@
         <?php foreach ($assets() as $asset): ?>
             <li>
                 <a href="<?= $assetURL(['asset' => $asset]) ?>" data-sub-html=".description">
-                    <img src="<?= $assetURL(['asset' => $asset, 'width' => 600, 'action' => 'crop', 'height' => 400]) ?>" alt="<?= $asset->getTitle() ?>" />
+                    <span class="bgimage" data-asset="<?= $asset->getId() ?>"></span>
 
                     <?php if (!empty($asset->getCredits())): ?>
                         <span class="credits"><?= $asset->getCredits() ?></span>
