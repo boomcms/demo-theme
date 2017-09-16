@@ -1,5 +1,10 @@
 <?= $view('inc.header') ?>
-<?= $chunk('slideshow', 'slideshow')->template('slideshow') ?>
+
+<div id="banner">
+    <?= $chunk('slideshow', 'slideshow')->template('slideshow') ?>
+    <?= $chunk('linkset', 'banner')->template('home-banner') ?>
+</div>
+
 <?= $view('inc.page-content') ?>
 <?= $chunk('slideshow', 'collectionlist')->template('album-slideshow') ?>
 

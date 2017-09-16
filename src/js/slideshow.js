@@ -5,7 +5,6 @@
 		$bannerSlideshow.flexslider({
 			slideshow: false,
 			controlNav: true,
-			manualControls: $bannerSlideshow.find('.flex-control-paging li a'),
 			directionNav: false
 		});
 	};

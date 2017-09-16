@@ -5,4 +5,22 @@ body#homepage {
             height: 60rem;
         }
     }
+
+    div.container {
+        padding: 5rem 2rem;
+    }
+}
+
+@media all and (min-width: 768px) {
+    body#homepage {
+        #banner {
+            overflow: hidden;
+
+            > * {
+                display: inline-block;
+                float: left;
+                width: 50%;
+            }
+        }
+    }
 }

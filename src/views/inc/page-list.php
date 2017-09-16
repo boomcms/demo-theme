@@ -10,7 +10,7 @@
                     <div class="description">
                         <h3><?= $p->getTitle() ?></h3>
 
-                        <?php if ((!isset($dates) || $dates === true)): ?>
+                        <?php if ($dates ?? false): ?>
                             <time datetime="<?= $p->getVisibleFrom()->format('w3c') ?>" pubdate>
                                 <?= $p->getVisibleFrom()->format('j F Y') ?>
                             </time>

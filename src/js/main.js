@@ -18,7 +18,7 @@
             } else {
                 $body
                     .removeClass('nav-fixed')
-                     d.css({
+                     .css({
                         paddingTop: 0
                     });
             }

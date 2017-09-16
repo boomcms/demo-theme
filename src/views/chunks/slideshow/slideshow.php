@@ -21,14 +21,4 @@
             </li>
         <?php endforeach ?> 
     </ul>
-
-    <div class="flex-navigation">
-        <div class="container">
-            <ol class="flex-control-paging">
-                <?php foreach ($slides as $key => $slide): ?>
-                    <li><a href="#"></a></li>
-                <?php endforeach ?>
-            </ol>
-        </div>
-    </div>
 </div>
