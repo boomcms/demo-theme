@@ -2,7 +2,7 @@
 
 <div id="banner">
     <?= $chunk('slideshow', 'slideshow')->template('slideshow') ?>
-    <?= $chunk('linkset', 'banner')->template('home-banner') ?>
+    <?= $chunk('linkset', 'banner')->setOptions(['link-title' => true])->template('home-banner') ?>
 </div>
 
 <?= $view('inc.page-content') ?>

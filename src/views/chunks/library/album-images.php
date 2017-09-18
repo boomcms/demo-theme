@@ -2,7 +2,7 @@
     <ul>
         <?php foreach ($assets() as $asset): ?>
             <li>
-                <a href="<?= $assetURL(['asset' => $asset]) ?>" data-sub-html=".description">
+                <a href="<?= $assetURL(['asset' => $asset]) ?>" data-sub-html=".description" class="card">
                     <span class="bgimage" data-asset="<?= $asset->getId() ?>"></span>
 
                     <?php if (!empty($asset->getCredits())): ?>
@@ -11,7 +11,7 @@
 
                     <?php if (!empty($asset->getDescription())): ?>
                         <div class="description">
-                            <p class="slide-caption"><?= $asset->getDescription() ?></p>
+                            <h3 class="slide-caption"><?= $asset->getDescription() ?></h3>
                         </div>
                     <?php endif ?>
                 </a> 

@@ -2,7 +2,7 @@
     <ul class="page-list">
         <?php foreach ($pages as $p): ?>                    
             <li>
-                <a href="<?= $p->url() ?>"> 
+                <a href="<?= $p->url() ?>" class="card"> 
                     <?php if ($p->hasFeatureImage()): ?>
                         <span class="bgimage" data-asset="<?= $p->getFeatureImageId() ?>"></span>
                     <?php endif ?>

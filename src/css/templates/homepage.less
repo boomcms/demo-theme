@@ -20,6 +20,21 @@ body#homepage {
                 display: inline-block;
                 float: left;
                 width: 50%;
+                height: 100%;
+            }
+
+            .home-banner {
+                a {
+                    height: 50%;
+                    position: relative;
+                    display: block;
+
+                    &:nth-of-type(n+2) {
+                        display: inline-block;
+                        width: 50%;
+                        float: left;
+                    }
+                }
             }
         }
     }

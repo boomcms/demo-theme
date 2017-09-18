@@ -1,0 +1,49 @@
+.card {
+    &:before {
+        background: fade(@black, 70);
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        content: ' ';
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
+
+    &:hover, &:focus {
+        &:before, .description {
+            opacity: 1;
+            transition: opacity 0.5s;
+        }
+    }
+
+    .description {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 80rem;
+        max-width: 100%;
+        margin: auto;
+        padding: 0 3rem;
+        color: fade(@white, 85);
+        opacity: 0;
+        transition: opacity 0.5s;
+        z-index: 2;
+        text-align: center;
+
+        h3 {
+            text-transform: uppercase;
+            font-size: 3rem;
+            line-height: 3rem;
+            font-weight: 500;
+            margin: 0 0 1rem 0;
+        }
+
+        time {
+            margin: 0;
+            display: block;
+        }
+    }
+}
