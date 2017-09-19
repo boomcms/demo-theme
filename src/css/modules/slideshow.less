@@ -1,6 +1,6 @@
 #slideshow  {
     width: 100%;
-    height: calc(~"100vh - 50px");
+    height: 30rem;
     overflow: hidden;
     padding: 0;
     margin: 0;
@@ -99,5 +99,11 @@
                 }
             }
         }
+    }
+}
+
+@media all and (min-width: 767px) {
+    #slideshow {
+        height: calc(~"100vh - 50px");
     }
 }

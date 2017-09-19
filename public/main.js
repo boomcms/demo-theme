@@ -12672,78 +12672,52 @@ return jQuery;
 	return $;
 }));
 $(document).ready(function() {
-	var resizeTimeout = null;
+    var resizeTimeout = null;
 
-	function resizeImages() {
-		top.$('[data-asset]').each(function() {
-			var $this = $(this),
-				width = Math.ceil($this.width() / 100) * 100,
-				height = Math.ceil($this.height() / 100) * 100,
-				url = '/asset/' + $this.attr('data-asset') + '/view/' + width;
+    function resizeImages($el) {
+        if (!$el) {
+            $el = top.$('[data-asset]');
+        }
 
-			if (parseInt($this.attr('data-asset')) > 0) {
-				if (typeof($this.attr('data-width')) === 'undefined' || width > parseInt($this.attr('data-width')) + 20) {
-					$this.attr('data-width', width);
-					var $img = new Image();
-					$img.src = url;
+        $el.each(function() {
+            var $this = $(this),
+                width = Math.ceil($this.width() / 250) * 250,
+                url = '/asset/' + $this.attr('data-asset') + '/view/' + width;
 
-					$img.onload = function() {
-					if ($img.complete && typeof $img.naturalWidth !== "undefined" && $img.naturalWidth !== 0) {
-						$this.css('background-image', 'url(' + url + ')');
-						$this.parent().addClass('bg-loaded');
-					} else {
-						$this.parent().addClass('bg-not-there');
-					}
-				};
+            if (parseInt($this.attr('data-asset')) > 0) {
+                if (typeof($this.attr('data-width')) === 'undefined' || width > parseInt($this.attr('data-width')) + 20) {
+                    $this.attr('data-width', width);
 
-				} else  {
-					var $img = new Image();
-					width = parseInt($this.attr('data-width'));
-					if(parseInt($this.attr('data-height'))) {
-						height = parseInt($this.attr('data-height'));
-					}
-					url = '/asset/' + $this.attr('data-asset') + '/view/' + width + '/' + height;
-					$img.src = url;	
+                    if ($this.is('img')) {
+                        $this.attr('src', url);
+                    } else {
+                        $this.css('background-image', 'url(' + url + ')');
+                    }
+                }
+            }
+        });
+    };
 
+    resizeImages();
 
-					$img.onload = function() {
-					if ($img.complete && typeof $img.naturalWidth !== "undefined" && $img.naturalWidth !== 0) {
-						$this.css('background-image', 'url(' + url + ')');
-						$this.parent().addClass('bg-loaded');
-					} else {
-						$this.parent().addClass('bg-not-there');
-					}
-				};
+    $(document).on('boomcms:chunkload', function(e) {
+        resizeImages($(e.target));
+        resizeImages($(e.target).find('[data-asset]'));
+    });
 
-				}
-			}
-			else {
-				$this.parent().addClass('bg-not-linked');
-			}
-		});
+    $(document).ajaxComplete(function() {
+        resizeImages();
+    });
 
-	};
+    $(window).resize(function() {
+        if (resizeTimeout !== null) {
+            clearTimeout(resizeTimeout);
+        }
 
-	resizeImages();
-
-	$(top.document).ajaxSuccess(function() {
-		resizeImages();
-	});
-
-	$(document).on('boomcms:chunkload', function(e) {
-		console.log('chunkload');
-		resizeImages($(e.target));
-		resizeImages($(e.target).find('[data-asset]'));
-	});
-
-	$(window).resize(function() {
-		if (resizeTimeout !== null) {
-			clearTimeout(resizeTimeout);
-		}
-
-		resizeTimeout = setTimeout(resizeImages, 500);
-	});
+        resizeTimeout = setTimeout(resizeImages, 500);
+    });
 });
+
 (function($) {
  	var $bannerSlideshow = $('#slideshow');
 
@@ -12768,6 +12742,7 @@ $(document).ready(function() {
 (function() {
 	var $body = $('body'),
         $window = $(window),
+        $topnav = $body.find('#topnav'),
         v_height = 200,
         v_padding = 80,
         v_scroll = 0;
@@ -12777,17 +12752,17 @@ $(document).ready(function() {
             v_scroll = $window.scrollTop();
 
             if (v_scroll + v_padding > v_height) {
-                $body
-                    .css({
-                        paddingTop: $body.find('#navbar').height()
-                    })
-                    .addClass('nav-fixed');
+                $body.css({
+                    paddingTop: $topnav.height()
+                });
+
+                $topnav.addClass('fixed');
             } else {
-                $body
-                    .removeClass('nav-fixed')
-                     .css({
-                        paddingTop: 0
-                    });
+                $topnav.removeClass('fixed');
+
+                $body.css({
+                    paddingTop: 0
+                });
             }
         });
 
@@ -12799,40 +12774,17 @@ $(document).ready(function() {
             $body.removeClass('sidebar-open');
         });
 
+    $topnav
+        .on('click', '#mobile-nav', function(e) {
+            e.preventDefault();
+
+            $topnav.toggleClass('open');
+        });
+
     $(".album-images ul").lightGallery({
         selector: 'a',
         hideControlOnEnd: true,
         subHtmlSelectorRelative: true,
         download: false
     });
-	
-	// init resp menu scripts
-	var $topnav = $('#topnav');
-
-    $body.on('click', 'label.main-menu-btn', function() {
-        if($('#main-menu-state').is(':checked')) {
-            $body.removeClass('mobile-menu-open');
-        } else {
-            $body.addClass('mobile-menu-open');
-        }
-    });
-		// add menu show hide toggle button on mobile
-	var $mainMenuState = $('#main-menu-state');
-	if ($mainMenuState.length) {
-		// animate mobile menu
-		$mainMenuState.change(function(e) {
-		
-			if (this.checked) {
-				$topnav.hide().slideDown(250, function() { $topnav.css('display', ''); });
-			} else {
-				$topnav.show().slideUp(250, function() { $topnav.css('display', ''); });
-			}
-		});
-		// hide mobile menu beforeunload
-		$(window).bind('beforeunload unload', function() {
-			if ($mainMenuState[0].checked) {
-				$mainMenuState[0].click();
-			}
-		});
- };
 })();

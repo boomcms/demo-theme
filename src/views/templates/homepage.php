@@ -1,6 +1,6 @@
 <?= $view('inc.header') ?>
 
-<div id="banner">
+<div id="home-banner">
     <?= $chunk('slideshow', 'slideshow')->template('slideshow') ?>
     <?= $chunk('linkset', 'banner')->setOptions(['link-title' => true])->template('home-banner') ?>
 </div>

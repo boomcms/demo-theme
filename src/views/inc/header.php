@@ -17,40 +17,26 @@
     </head>
 
     <body id="<?= $page->getTemplate()->getFilename() ?>">
-        <header>
-            <nav id="navbar" class="container"> 
-                <?php if (!$page->isRoot()): ?>
-                    <?= $view('inc.sibling-nav') ?>
-                <?php endif ?>
+        <header id="topnav">
+            <?php if (!$page->isRoot()): ?>
+                <?= $view('inc.sibling-nav') ?>
+            <?php endif ?>
 
-                <div class="navbar-header">
-                    <?php $home = $page->isRoot() ? $page : Page::findByUri('') ?>
+            <?php $home = $page->isRoot() ? $page : Page::findByUri('') ?>
 
-                    <a id="logo" href="/"><?= $chunk('asset', 'logo', $home)->template('logo') ?></a>
-                </div>
+            <a id="logo" href="/"><?= $chunk('asset', 'logo', $home)->template('logo') ?></a>
+            <a id="mobile-nav" href="#"><span class="fa fa-bars" aria-hidden="true"></span></a>
 
-                <div class="nav-container">
-                    <input id="main-menu-state" type="checkbox" />
-
-                    <label class="main-menu-btn" for="main-menu-state">
-                        <span class="main-menu-btn-icon"></span>
-                        <span class="main-menu-btn-text">Toggle main menu visibility</span>
-
-                        <span class="main-menu-btn-title" aria-hidden="true">
-                            <span aria-hidden="true" data-icon="h"></span>
-                        </span>
-                    </label>
-
-                    <ul id="topnav" class="main-menu">
-                        <?php foreach ($getPages(['parent' => $home, 'visibleinnavigation' => true]) as $child): ?>
-                            <li<?php if ($child->is($page)): ?> class="active"<?php endif ?>>
-                                <a href="<?= $child->url() ?>">
-                                    <?= $child->getTitle() ?>
-                                </a>
-                            </li>
-                       <?php endforeach ?>
-                    </ul>
-                </div>
+            <nav>
+                <ul>
+                    <?php foreach ($getPages(['parent' => $home, 'visibleinnavigation' => true]) as $child): ?>
+                        <li<?php if ($child->is($page)): ?> class="active"<?php endif ?>>
+                            <a href="<?= $child->url() ?>">
+                                <?= $child->getTitle() ?>
+                            </a>
+                        </li>
+                   <?php endforeach ?>
+                </ul>
             </nav>
         </header>
 

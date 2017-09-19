@@ -1,4 +1,4 @@
-<div class="home-banner">
+<div>
     <?php foreach ($links as $link): ?>
         <a href="<?= $link->url() ?>" class="card">
             <span class="bgimage" data-asset="<?= $link->getFeatureImageId() ?>"></span>

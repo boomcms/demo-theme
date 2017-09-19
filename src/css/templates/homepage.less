@@ -1,4 +1,19 @@
 body#homepage {
+    #home-banner {
+        height: 50rem;
+        max-height: 100vh;
+        position: relative;
+        width: 100%;
+
+        > div:nth-of-type(2) {
+            a {
+                height: 20rem;
+                position: relative;
+                display: block;
+            }
+        }
+    }
+
     .album-slideshow {
         ul li {
             width: 100%;
@@ -11,10 +26,11 @@ body#homepage {
     }
 }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     body#homepage {
-        #banner {
+        #home-banner {
             overflow: hidden;
+            height: 100vh;
 
             > * {
                 display: inline-block;
@@ -23,11 +39,9 @@ body#homepage {
                 height: 100%;
             }
 
-            .home-banner {
+            > div:nth-of-type(2) {
                 a {
                     height: 50%;
-                    position: relative;
-                    display: block;
 
                     &:nth-of-type(n+2) {
                         display: inline-block;
