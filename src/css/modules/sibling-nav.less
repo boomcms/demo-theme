@@ -1,6 +1,6 @@
 #sibling-nav {
     display: inline-block;
-    position: absolute;
+    position: relative;
     top: 0;
     left: 1.5rem;
     overflow: visible;
@@ -99,5 +99,11 @@
                 transform: rotate(-45deg);
             }
         }
+    }
+}
+
+@media all and (min-width: 767px) {
+    #sibling-nav {
+        position: absolute;
     }
 }
