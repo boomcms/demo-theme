@@ -5,11 +5,9 @@
                 <a href="<?= $slide->getLink() ?>" class="slide-link card">
                     <span class="bgimage" data-asset="<?= $slide->getAssetId() ?>"></span>
 
-                    <div class="container">
-                        <div class="description">
-                            <h3 class="slide-title"><?= $slide->getTitle() ?></h3>
-                            <p class="slide-caption"><?= $slide->getCaption() ?></p>
-                        </div>
+                    <div class="description">
+                        <h3 class="slide-title"><?= $slide->getTitle() ?></h3>
+                        <p class="slide-caption"><?= $slide->getCaption() ?></p>
                     </div>
                 </a>
             </li> 
