@@ -3,7 +3,7 @@
         <?php foreach ($slides as $slide): ?>
             <li>
                 <?php if ($slide->getLink()->url() !== ''): ?>
-                    <a href="<?= $slide->getLink() ?>">
+                    <a href="<?= $slide->getLink() ?>" class="card">
                 <?php endif ?>
 
                 <span class="bgimage" data-asset="<?= $slide->getAssetId() ?>"></span>

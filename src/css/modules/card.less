@@ -33,7 +33,7 @@
         z-index: 2;
         text-align: center;
 
-        h3 {
+        h2, h3 {
             text-transform: uppercase;
             font-size: 3rem;
             line-height: 3rem;
@@ -48,10 +48,10 @@
     }
 }
 
-@media all and (min-width: 767px) {
+@media all and (max-width: 768px) {
     .card {
         &:before, .description {
-            opacity: 1;
+            opacity: 0.75;
             transition: opacity 0.5s;
         }
     }
