@@ -7,6 +7,8 @@
         list-style-type: none;
         padding: 0;
         width: calc(~"100% + 1rem");
+        display: flex;
+        flex-wrap: wrap;
 
         li {
             padding: 0.5rem;
@@ -22,17 +24,15 @@
 
                 p {
                     font-weight: 500;
-                    font-size: 5rem;
+                    font-size: 4rem;
                     line-height: 4.2rem;
-                    text-transform: uppercase;
                     margin: 2rem 0 0 0;
                 }
             }
 
             @media all and (min-width: 600px) {
-                display: inline-block;
-                float: left;
-                width: 50%;
+                width: 100/3%;
+                flex-grow: 3;
                 height: 50vw;
             }
         }
