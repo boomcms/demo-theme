@@ -9,7 +9,6 @@ Feel free to customise this theme as much you want to suit your own needs. To bu
 
 ```
 npm install
-bower install
 ```
 
-Then run `grunt build`
+Then run `npm run dev` to build the CS & JS files
