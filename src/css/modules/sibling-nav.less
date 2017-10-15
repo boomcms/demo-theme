@@ -27,7 +27,7 @@
             content: '';
             height: 4px;
             width: 80%;
-            background: @orange;
+            background: @white;
             position: absolute;
             top: 50%;
             transition: transform .2s;
@@ -38,10 +38,12 @@
         position: fixed;
         left: -230px;
         top: 0;
+        bottom: 0;
+        overflow-y: auto;
         width: 230px;
         padding-top: 4rem;
         height: 100%;
-        background: @white;
+        background: @black;
         transition: left .2s;
         z-index: 10001;
 
@@ -54,26 +56,35 @@
                 width: 100%;
             }
 
-            li a {
-                padding: .7rem 0;
+            a {
+                padding: 0.7rem 0 0.7rem 2rem;
                 margin-bottom: .5rem;
                 padding-left: 2rem;
-            }
+                color: @white;
 
-            li a.active {
-                background-color: lighten(@orange, 50%);
-                padding-left: 2.3rem;
-                position: relative;
+                &:hover, &:focus, &.active {
+                    background-color: lighten(@black, 50%);
+                }
 
-                &:before {
-                    display: block;
-                    content: '';
-                    position: absolute;
-                    background: @orange;
-                    top: 1.5rem;
-                    left: 1rem;
-                    width: 5px;
-                    height: 5px;
+                &.active {
+                    padding-left: 5.3rem;
+                    position: relative;
+
+                    &:before {
+                        display: block;
+                        content: '';
+                        position: absolute;
+                        background: @white;
+                        top: 1.5rem;
+                        left: 3rem;
+                        width: 5px;
+                        height: 5px;
+                    }
+                }
+
+                &.parent {
+                    color: @yellow;
+                    font-weight: 600;
                 }
             }
         }
@@ -82,8 +93,6 @@
     .sidebar-open & {
         #sidebar {
             left: 0;
-            box-shadow: 0 1px 6px -1px fade(@black, 70%);
-            background: lighten(@orange, 47%);
         }
 
         #sidebar_nav_open {

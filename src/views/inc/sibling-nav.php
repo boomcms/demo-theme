@@ -2,7 +2,8 @@
     $parent = $page->getParent();
     
     $siblings = $getPages([
-        'parent' => $parent
+        'parent' => $parent,
+        'visibleinnavigation' => true,
     ]);
 ?>
 
@@ -14,6 +15,10 @@
             <a href="javascript:void(0);" id="sidebar_nav_close">Close Siblings Menu</a>
 
             <ul>
+                <li>
+                    <a href="<?= $parent->url() ?>" class="parent"><?= $parent->getTitle() ?></a>
+                </li>
+
                 <?php foreach($siblings as $p) : ?>
                     <li>
                         <a href="<?= $p->url() ?>"<?php if ($p->is($page)): ?> class="active"<?php endif ?>>
