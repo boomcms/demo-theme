@@ -12,7 +12,7 @@ let mix = require('laravel-mix');
  */
 
 mix.scripts([
-    'bower_components/jquery/dist/jquery.js',
+    'node_modules/jquery/dist/jquery.js',
     'bower_components/modernizr/modernizr.js',
     'bower_components/flexslider/jquery.flexslider.js',
     'bower_components/lightgallery/dist/js/lightgallery.min.js',
