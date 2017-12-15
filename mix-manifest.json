@@ -1,7 +1,4 @@
 {
-    "/src/main.css": "/src/main.css",
-    "/mix.js.map": "/mix.js.map",
-    "/src/main.css.map": "/src/main.css.map",
-    "/public/main.js": "/public/main.js",
-    "/public/main.css": "/public/main.css"
+    "/public/main.css": "/public/main.css",
+    "/public/main.js": "/public/main.js"
 }

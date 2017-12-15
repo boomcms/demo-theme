@@ -13,17 +13,12 @@ let mix = require('laravel-mix');
 
 mix.scripts([
     'node_modules/jquery/dist/jquery.js',
-    'bower_components/modernizr/modernizr.js',
-    'bower_components/flexslider/jquery.flexslider.js',
-    'bower_components/lightgallery/dist/js/lightgallery.min.js',
-    'bower_components/smartmenus/dist/jquery.smartmenus.js',
+    'node_modules/flexslider/jquery.flexslider-min.js',
+    'node_modules/lightgallery/dist/js/lightgallery.min.js',
+    'node_modules/smartmenus/dist/jquery.smartmenus.min.js',
     'src/js/resizeImages.js',
     'src/js/slideshow.js', 
     'src/js/main.js'
 ], 'public/main.js')
-    .less('src/css/main.less', 'src/main.css')
-    .styles([
-        'bower_components/lightgallery/dist/css/lightgallery.css',
-        'src/main.css'
-    ], 'public/main.css')
+    .less('src/css/main.less', 'public/main.css')
     .sourceMaps();

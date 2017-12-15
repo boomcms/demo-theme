@@ -17,13 +17,16 @@
     "production": "cross-env NODE_ENV=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "devDependencies": {
-    "bower": "~1.7.7",
     "cross-env": "^5.0.5",
     "laravel-mix": "^1.4.3",
     "less": "^2.7.2",
     "less-loader": "^4.0.5"
   },
   "dependencies": {
-    "jquery": "^3.2.1"
+    "jquery": "^3.2.1",
+    "flexslider": "2.6.4",
+    "lightgallery": "1.6.5",
+    "smartmenus": ">=1.1.0",
+    "modernizr": "3.5.0"
   }
 }
